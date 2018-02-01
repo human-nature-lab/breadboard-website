@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <title>Email test armature</title>
+    <style>
+        .result { display: none; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+
+<form>
+    <input type="text" placeholder="Text" />
+    <input type="submit" value="Submit" />
+    <div class="success result">Success</div>
+    <div class="error result">Error</div>
+</form>
+
+<script type="text/javascript" src="scripts/jquery-latest.js"></script>
+<script type="text/javascript">
+
+$('form').on('submit', function (ev) {
+    ev.preventDefault();
+    var $form = $(this);
+    var slide_time = 400; // speed of UI change
+    // disable form
+    $form.find('input[type=submit]').prop('disabled', true);
+    // clear all result UI
+    $form.find('.result').hide();
+    $.ajax({
+        type: 'POST',
+        url: 'email_sender_test.php',
+        data: {
+            field_name: 'Name',
+            field_email: 'email@example.com',
+            field_phone: '8150101010',
+            field_message: 'Message is like this'
+        },
+        success: function () {
+            $form.find('.success')
+                .slideDown(slide_time)
+                .delay(slide_time * 10)
+                .slideUp(slide_time);
+        },
+        error: function () {
+            $form.find('.error')
+                .slideDown(slide_time)
+                .delay(slide_time * 10)
+                .slideUp(slide_time);
+        },
+        complete: function () {
+            // reset form
+            $form[0].reset();
+            // reenable form
+            $form.find('input[type=submit]').prop('disabled', false);
+        }
+    });
+})
+
+</script>
+
+</body>
+</html>
