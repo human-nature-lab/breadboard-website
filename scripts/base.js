@@ -60,7 +60,7 @@ $(function () {
                     .split('/')
                     .slice(0, -1)
                     .join('/')
-                    .concat('/downloads/breadboard-v2.2.4.zip')
+                    .concat('/downloads/breadboard-v2.3.0.zip')
                 window.location = location_new;
                 modal_close($modal);
                 $email.val('');
