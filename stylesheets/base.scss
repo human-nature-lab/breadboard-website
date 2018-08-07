@@ -16,6 +16,36 @@
     src: url('../fonts/oxygen_bold.ttf');
 }
 
+/* New classes to support accessibility */
+main{
+    position: relative;
+    height: 100%;
+}
+
+.content{
+    background: #00356b;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+.high-contrast-icon {
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin: 0;
+    z-index:11;
+    border: none;
+}
+
 $color-blue-yale-dark: #00356b;
 $color-blue-yale-medium: #286dc0;
 $color-blue-yale-light: #63aaff;
@@ -511,7 +541,7 @@ textarea {
 
 .colophon {
     background: $color-blue-yale-light;
-    color: $color-gray-yale-medium;
+    /*color: $color-gray-yale-medium;*/
     a {
         color: $color-blue-yale-dark;
         border: none;

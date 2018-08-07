@@ -29,23 +29,22 @@ mixpanel.init("d511d2db4c336e04854cf4356473a4ce");</script><!-- end Mixpanel -->
     
     <link rel="stylesheet" type="text/css" media="all" href="stylesheets/reset.css" />
     <!-- <link rel="stylesheet" type="text/css" media="all" href="stylesheets/default.css" /> -->
-    <link rel="stylesheet" type="text/css" media="all" href="stylesheets/base.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="stylesheets/base.css?20180226" />
     <link rel="icon" href="favicon.ico" sizes="16x16 32x32" type="favicon/ico">
-    
-    <style type="text/css">
-    </style>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
-<body>
+<body id="top">
+<button id="high-contrast-button" aria-label="Switch to high-contrast colors" title="Switch to high-contrast colors" class="high-contrast-icon"><i class="fas fa-adjust"></i></button>
 
 <section class="navigation cleared" id="navigation">
     <div class="masthead">
-        <img src="images/logo_breadboard_162_x_40.png" />
+        <img alt="The breadboard logo" src="images/logo_breadboard_162_x_40.png" />
     </div>
     <!-- <div class="mobile">Nav</div> -->
     <ul>
-        <li><a href="#navigation">Home</a></li>
+        <li><a href="#top">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#install">Install</a></li>
         <li><a href="#tutorials">Tutorials</a></li>
@@ -65,6 +64,7 @@ mixpanel.init("d511d2db4c336e04854cf4356473a4ce");</script><!-- end Mixpanel -->
     </div>
 </section>
 
+<main role="main">
 <section class="content" id="about">
     <div class="container cleared">
         <h1 class="grid_12">About</h1>
@@ -73,7 +73,6 @@ mixpanel.init("d511d2db4c336e04854cf4356473a4ce");</script><!-- end Mixpanel -->
             <p>To cite usage of this software in an academic publication, please use the following:</p>
             <blockquote>McKnight, Mark E., and Nicholas A. Christakis. <em>Breadboard.</em> Computer software. <em>Breadboard: Software for Online Social Experiments.</em> Vers. 2. Yale University, 1 May 2016. Web.</blockquote>
         </div>
-        <div class="grid_12 top"><a href="#">Top &#x25b2;</a></div>
     </div>
 </section>
 
@@ -97,6 +96,23 @@ mixpanel.init("d511d2db4c336e04854cf4356473a4ce");</script><!-- end Mixpanel -->
         </div>
         <div class="grid_12 top"><a href="#">Top &#x25b2;</a></div>
     </div>
+    <div class="container cleared">
+        <h1 class="grid_12">Mailing list</h1>
+        <div class="grid_8">
+            <p>To be notified when new versions of breadboard are released, please sign up for our mailing list:</p>
+            <form class="mailing-list" method="post" action="https://mailman.yale.edu/mailman/subscribe/breadboard">
+                <div class="form-group">
+                    <label class="sr-only" for="tr-email">Email</label><input type="email" class="form-control" name="email" id="tr-email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="tr-email">Your name (optional)</label><input type="text" class="form-control" name="fullname" id="tr-fullname" placeholder="Your name (optional)">
+                </div>
+                <div>
+                    <button type="submit" class="button">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </section>
 
 <section class="interstitial interstitial_2">
@@ -115,7 +131,7 @@ mixpanel.init("d511d2db4c336e04854cf4356473a4ce");</script><!-- end Mixpanel -->
         </div>
         <h1 class="grid_12">Video tutorials</h1>
         <div class="grid_12">
-            <iframe style="margin-bottom: 1.5em;" src="https://www.youtube.com/embed/videoseries?list=PLxLzL3EcWOXh6RZm5HYLsM-hmIFKW6sxH" frameborder="0" allowfullscreen></iframe>
+            <iframe title="YouTube: breadboard video tutorial series" style="margin-bottom: 1.5em;" src="https://www.youtube.com/embed/videoseries?list=PLxLzL3EcWOXh6RZm5HYLsM-hmIFKW6sxH" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="grid_12 top"><a href="#">Top &#x25b2;</a></div>
     </div>
@@ -131,7 +147,7 @@ mixpanel.init("d511d2db4c336e04854cf4356473a4ce");</script><!-- end Mixpanel -->
         <a href="http://humannaturelab.net/wp-content/uploads/2017/05/Locally-noisy-autonomous-agents-improve-global-human-coordination-in-network-experiments.pdf" target="_blank">
             <div class="grid_4 publication">
                 <div class="thumbnail">
-                    <img src="images/figure_paper_6.png" />
+                    <img alt="A figure from the May 2017 Nature paper" src="images/figure_paper_6.png" />
                 </div>
                 <h2 class="title">"Locally noisy autonomous agents improve global human coordination in network experiments"</h2>
                 <h3 class="authors">Hirokazu Shirado and Nicholas A. Christakis</h3>
@@ -139,14 +155,12 @@ mixpanel.init("d511d2db4c336e04854cf4356473a4ce");</script><!-- end Mixpanel -->
                     <span class="journal">Nature</span>
                     (May 18, 2017)
                 </h3>
-                <h2 class="journal"></h2>
-                <p class="reference"></p>
             </div>
         </a>
         <a href="http://humannaturelab.net/wp-content/uploads/2016/02/164-Intermediate-Levels-of-Network-Fluidity-Amplify-Economic-Growth-and-Mitigate-Economic-Inequality-in-Experimental-Social-Networks.pdf" target="_blank">
             <div class="grid_4 publication">
                 <div class="thumbnail">
-                    <img src="images/figure_paper_1.jpg" />
+                    <img alt="A figure from the November 2015 Sociological Science paper" src="images/figure_paper_1.jpg" />
                 </div>
                 <h2 class="title">"Intermediate Levels of Social Fluidity Amplify Economic Growth and Mitigate Economic Inequality in Experimental Social Networks"</h2>
                 <h3 class="authors">Nishi, Shirado, and Christakis</h3>
@@ -154,14 +168,12 @@ mixpanel.init("d511d2db4c336e04854cf4356473a4ce");</script><!-- end Mixpanel -->
                     <span class="journal">Sociological Science</span>
                     (November 30, 2015)
                 </h3>
-                <h2 class="journal"></h2>
-                <p class="reference"></p>
             </div>
         </a>
         <a href="http://humannaturelab.net/wp-content/uploads/2015/08/163-Inequality-and-Visibility-of-Wealth-in-Experimental-Social-Networks.pdf" target="_blank">
             <div class="grid_4 publication">
                 <div class="thumbnail">
-                    <img src="images/figure_paper_2.jpg" />
+                    <img alt="A figure from the September 2015 Nature paper" src="images/figure_paper_2.jpg" />
                 </div>
                 <h2 class="title">"Inequality and Visibility of Wealth in Experimental Social Networks"</h2>
                 <h3 class="authors">Nishi et al</h3>
@@ -175,7 +187,7 @@ mixpanel.init("d511d2db4c336e04854cf4356473a4ce");</script><!-- end Mixpanel -->
         <a href="http://humannaturelab.net/wp-content/uploads/2015/03/158-Static-Network-Structure-Can-Stabilize-Human-Cooperation.pdf" target="_blank">
             <div class="grid_4 publication">
                 <div class="thumbnail">
-                    <img src="images/figure_paper_3.png" />
+                    <img alt="A figure from the 2014 PNAS paper" src="images/figure_paper_3.png" />
                 </div>
                 <h2 class="title">"Static Network Structure Can Stabilize Human Cooperation"</h2>
                 <h3 class="authors">Rand et al</h3>
@@ -188,7 +200,7 @@ mixpanel.init("d511d2db4c336e04854cf4356473a4ce");</script><!-- end Mixpanel -->
         <a href="http://humannaturelab.net/wp-content/uploads/2015/03/147-Quality-Versus-Quantity-of-Social-Ties-in-Experimental-Cooperative-Networks.pdf" target="_blank">
             <div class="grid_4 publication">
                 <div class="thumbnail">
-                    <img src="images/figure_paper_4.jpg" />
+                    <img alt="A firgure from the 2013 Nature paper" src="images/figure_paper_4.jpg" />
                 </div>
                 <h2 class="title">"Quality Versus Quantity of Social Ties in Experimental Cooperative Networks"</h2>
                 <h3 class="authors">Shirado et al</h3>
@@ -201,7 +213,7 @@ mixpanel.init("d511d2db4c336e04854cf4356473a4ce");</script><!-- end Mixpanel -->
         <a href="http://humannaturelab.net/wp-content/uploads/2014/10/126-Dynamic-Social-Networks-Promote-Cooperation-in-Experiments-with-Humans.pdf" target="_blank">
             <div class="grid_4 publication">
                 <div class="thumbnail">
-                    <img src="images/figure_paper_5.png" />
+                    <img alt="A figure from the 2011 PNAS paper" src="images/figure_paper_5.png" />
                 </div>
                 <h2 class="title">"Dynamic Social Networks Promote Cooperation in Experiments with Humans"</h2>
                 <h3 class="authors">Rand, Arbesman, and Christakis</h3>
@@ -225,10 +237,10 @@ mixpanel.init("d511d2db4c336e04854cf4356473a4ce");</script><!-- end Mixpanel -->
             <h1>Contact us</h1>
             <p>Send us a message if you are not affiliated with an academic institution but would still like to use our software, or if you have any other questions.</p>
             <form action="/" class="contact" autocomplete="off">
-                <input type="text" placeholder="Name" name="name" maxlength="64" required />
-                <input type="email" placeholder="Email" name="email" maxlength="64" required />
-                <input type="tel" placeholder="Phone" name="phone" maxlength="64" />
-                <textarea placeholder="Message" name="message" resize="no"></textarea>
+                <label for="contact-form-name" class="sr-only">Name</label><input id="contact-form-name" type="text" placeholder="Name" name="name" maxlength="64" required />
+                <label for="contact-form-email" class="sr-only">Email</label><input id="contact-form-email" type="email" placeholder="Email" name="email" maxlength="64" required />
+                <label for="contact-form-phone" class="sr-only">Phone</label><input id="contact-form-phone" type="tel" placeholder="Phone" name="phone" maxlength="64" />
+                <label for="contact-form-message" class="sr-only">Message</label><textarea id="contact-form-message" placeholder="Message" name="message" resize="no"></textarea>
                 <input type="submit" class="button" value="Submit" />
                 <div class="success result">Message successfully submitted!</div>
                 <div class="error result">Message couldn't be sent.</div>
@@ -251,9 +263,10 @@ mixpanel.init("d511d2db4c336e04854cf4356473a4ce");</script><!-- end Mixpanel -->
         </div>
     </div>
 </section>
+</main>
 
 <section class="modal">
-    <div class="control close">&times;</div>
+    <div aria-label="Close" class="control close">&times;</div>
     <div class="iframe">
     </div>
 </section>
@@ -357,7 +370,7 @@ II. Terms and Conditions of this Agreement:
 
 14. RECIPIENT agrees to provide appropriate acknowledgement of the source of the PROGRAM in all professional journals and publications using the statement that data were collected using "the software package breadboard created by the Human Nature Lab at Yale University (breadboard.yale.edu)". RECIPIENT is kindly requested to notify YALE SCIENTIST of such publications or research findings.
         </textarea>
-        <input type="text" name="email" placeholder="Email address" autocomplete="off" />
+        <label for="download-form-email" class="sr-only">Email address</label><input id="download-form-email" type="text" name="email" placeholder="Email address" autocomplete="off" />
         <div class="result error">The email address you entered is either invalid or doesn't end in '.edu', '.org', or '.gov'. Try again, or use the contact form to get in touch.</div>
         <button class="button reject">Reject</button>
         <button class="button accept">Agree</button>
@@ -365,7 +378,7 @@ II. Terms and Conditions of this Agreement:
 </section>
 
 <script type="text/javascript" src="scripts/jquery-latest.js"></script>
-<script type="text/javascript" src="scripts/base.js"></script>
+<script type="text/javascript" src="scripts/base.js?20180226"></script>
 <script type="text/javascript">
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

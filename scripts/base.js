@@ -7,7 +7,19 @@ $(function () {
     //     'linux': 2,
     //     'windows': 3
     // };
-    
+
+    var isHighContrast = false;
+    function highContrastColors() {
+      isHighContrast = !isHighContrast;
+      var backgroundColor = (isHighContrast) ? '#000' : '#00356b';
+      var linkColor = (isHighContrast) ? '#fff' : '#b1dbff';
+      $('a').css('color', linkColor);
+      $('.content').css('background', backgroundColor);
+      $('.navigation').css('background', backgroundColor);
+    }
+
+    $('#high-contrast-button').on('click', highContrastColors);
+
     function modal_open($modal) {
         $('body').addClass('unscrollable');
         $modal.show();
@@ -21,6 +33,7 @@ $(function () {
     $('.play').on('click', function () {
         mixpanel.track('Video Play');
         // ga('send', 'event', 'Video', 'Play');
+        $('#high-contrast-button').hide();
         if ($('.modal .iframe iframe').length == 0) {
             $('.modal .iframe').append('<iframe width="100%" height="100%" frameborder="0" src="https://www.youtube.com/embed/FQgb9F_jngg?autoplay=1">');
         }
@@ -30,6 +43,7 @@ $(function () {
 
     // TODO move these concerns into the right places, triggered by events?
     $('.modal .control.close, .modal_install .control.close, .modal_download .control.close').on('click', function () {
+        $('#high-contrast-button').show();
         var $modal = $(this).parent();
         modal_close($modal);
         $modal.find('.iframe iframe').remove(); // TODO pause video instead
@@ -149,25 +163,26 @@ $(function () {
             }
         });
     });
-    
+
     $('.navigation ul a').on('click', function (ev) {
         ev.preventDefault();
         var target = $(this).attr('href');
-        // console.log(target);
         var $target = $(target);
-        var height = $('#navigation').outerHeight();
-        var position = $target.position().top + 1 + 'px';
-        // console.log(height);
-        // console.log($target.position().top);
-        // console.log(position)
-        $('html, body').animate({ scrollTop: position }, 400);
+        var curPos = $('html').scrollTop();
+        var pos = $target[0].getBoundingClientRect().top - document.body.getBoundingClientRect().top + 1;
+        console.log(pos);
+
+        var position =  pos + 'px';
+        var time = 200 * (Math.abs(pos - curPos) / window.innerHeight) + 200;
+        console.log(time);
+        $('html').animate({ scrollTop: position }, time);
     });
-    
+
     var adjust_margin = function () {
         var height = $('#navigation').outerHeight();
         // console.log(height);
         $('.window').css({'margin-top': height + 'px'});
-    }
+    };
     
     $(window).on('resize', function () {
         adjust_margin();

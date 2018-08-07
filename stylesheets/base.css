@@ -10,6 +10,32 @@
   font-family: 'Oxygen';
   font-weight: 600;
   src: url("../fonts/oxygen_bold.ttf"); }
+/* New classes to support accessibility */
+main {
+  position: relative;
+  height: 100%; }
+
+.content {
+  background: #00356b; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
+
+.high-contrast-icon {
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: 0;
+  z-index: 11;
+  border: none; }
+
 *,
 *:before,
 *:after {
@@ -411,7 +437,7 @@ textarea {
 
 .colophon {
   background: #63aaff;
-  color: #4a4a4a; }
+  /*color: $color-gray-yale-medium;*/ }
   .colophon a {
     color: #00356b;
     border: none; }
@@ -513,3 +539,5 @@ textarea {
 
   .container .grid_4 {
     width: 50%; } }
+
+/*# sourceMappingURL=base.css.map */

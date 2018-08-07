@@ -56,12 +56,12 @@ EOT;
     $mail->FromName = 'Breadboard Admin';
 
     // set recipient information
-    $recipient_email = 'thomas.keegan@yale.edu';
-    $recipient_name = 'Thomas Keegan';
+    $recipient_email = 'breadboard@yale.edu';
+    $recipient_name = 'Breadboard';
     $mail->AddAddress($recipient_email, $recipient_name);
     // can set cc and bcc recipients if needed
     $mail->addCC('mark.mcknight@yale.edu', 'Mark McKnight');
-    $mail->addCC('code@peterbehr.net', 'Peter Behr');
+    $mail->addCC('thomas.keegan@yale.edu', 'Thomas Keegan');
     // $mail->addBCC('');
 
     // set reply-to field as email address of submitter
