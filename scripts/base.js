@@ -168,14 +168,14 @@ $(function () {
         ev.preventDefault();
         var target = $(this).attr('href');
         var $target = $(target);
-        var curPos = $('body').scrollTop();
+        var curPos = $('html').scrollTop();
         var pos = $target[0].getBoundingClientRect().top - document.body.getBoundingClientRect().top + 1;
 
         var position =  pos + 'px';
         console.log(position);
         var time = 200 * (Math.abs(pos - curPos) / window.innerHeight) + 200;
         console.log(time);
-        $('body').animate({ scrollTop: position }, time);
+        $('body, html').animate({ scrollTop: position }, time);
     });
 
     var adjust_margin = function () {
