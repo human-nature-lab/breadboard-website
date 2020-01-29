@@ -33,7 +33,7 @@ exports.handler = async (event) => {
 
   const descriptor = {
     from: `"${body.email}" <${FROM_EMAIL_ADDRESS}>`,
-    to: CONTACT_EMAILS,
+    to: CONTACT_EMAILS.replace(';', ','),
     subject: `${body.name} <${body.phone}> from breadboard.yale.edu`,
     text: body.message
   }
