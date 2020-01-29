@@ -416,7 +416,6 @@ input[type=submit] {
 
 form .result {
   display: none;
-  width: 50%;
   line-height: 2.25em;
   padding: 0 1em; }
 form .success {

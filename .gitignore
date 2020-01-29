@@ -3,3 +3,6 @@ downloads
 .ftpquota
 email_log.txt
 .sass-cache
+.env
+node_modules
+.netlify

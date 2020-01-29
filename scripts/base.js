@@ -127,14 +127,14 @@ $(function () {
         // serialize form values
         // send data
         $.ajax({
+            url: '/.netlify/functions/send-contact-email',
             type: 'POST',
-            url: 'email_sender.php',
-            data: {
-                field_name: $('form.contact [name=name]').val(),
-                field_email: $('form.contact [name=email]').val(),
-                field_phone: $('form.contact [name=phone]').val() || 'N/A',
-                field_message: $('form.contact [name=message]').val()
-            },
+            data: JSON.stringify({
+                name: $('form.contact [name=name]').val(),
+                email: $('form.contact [name=email]').val(),
+                phone: $('form.contact [name=phone]').val() || 'N/A',
+                message: $('form.contact [name=message]').val()
+            }),
             success: function () {
                 // send analytics event
                 mixpanel.track('Contact Success');
@@ -144,24 +144,26 @@ $(function () {
                     .slideDown(slide_time)
                     .delay(slide_time * 15)
                     .slideUp(slide_time);
+                // reset form
+                $form[0].reset();
             },
-            error: function () {
+            error: function (err) {
+                console.log('err', err)
                 // send analytics event
                 mixpanel.track('Contact Error');
                 // ga('send', 'event', 'Contact Form', 'Submit Error');
                 // display request status in UI
                 $form.find('.error')
+                    .text(err.responseText)
                     .slideDown(slide_time)
                     .delay(slide_time * 15)
                     .slideUp(slide_time);
             },
             complete: function () {
-                // reset form
-                $form[0].reset();
                 // reenable form
                 $form.find('input[type=submit]').prop('disabled', false);
             }
-        });
+        })
     });
 
     $('.navigation ul a').on('click', function (ev) {
