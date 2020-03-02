@@ -70,12 +70,7 @@ $(function () {
                 );
                 // var platform_code = platform_map[platform_flag];
                 // ga('send', 'event', 'Downloads', 'Accept Terms', platform_code);
-                var location_new = window.location.href
-                    .split('/')
-                    .slice(0, -1)
-                    .join('/')
-                    .concat('/downloads/breadboard-v2.3.0.zip')
-                window.location = location_new;
+                window.location = 'https://github.com/human-nature-lab/breadboard/releases/download/v2.3.1/breadboard-v2.3.1.zip'
                 modal_close($modal);
                 $email.val('');
             } else {
