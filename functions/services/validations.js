@@ -3,7 +3,7 @@ exports.validateEmail = (ctx, str) => {
     throw TypeError(`${ctx} must be a string`)
   }
 
-  exports.validateLength(ctx, str, 5, 30)
+  exports.validateLength(ctx, str, 5, 254)
 
   if (!/^[\w.-]+@[\w.-]+\.\w+$/.test(str)) {
     throw TypeError(`${ctx} is not an email address`)
