@@ -19,10 +19,21 @@
   "author": "Netlify",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^8.2.0",
     "mailgun-js": "^0.22.0"
   },
   "devDependencies": {
-    "vuepress": "^1.8.2"
+    "@vuedoc/md": "^3.2.0",
+    "@vuedoc/parser": "^3.3.0",
+    "concat-md": "^0.3.5",
+    "dotenv": "^8.6.0",
+    "jsdoc-to-markdown": "^7.0.1",
+    "mkdirp": "^1.0.4",
+    "turndown": "^7.0.0",
+    "typedoc": "^0.20.36",
+    "typedoc-plugin-markdown": "^3.8.1",
+    "typescript": "^4.2.4",
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-versioning": "^4.10.2",
+    "walkdir": "^0.4.1"
   }
 }

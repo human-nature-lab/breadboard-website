@@ -28,6 +28,3 @@
 ## Steps
 
 <iframe class="youtube" width="950" height="580" src="https://www.youtube.com/embed/bdLhCn9kI18?list=PLxLzL3EcWOXh6RZm5HYLsM-hmIFKW6sxH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-TODO Add next steps

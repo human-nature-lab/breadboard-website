@@ -1,7 +1,12 @@
 # Recipes
 Below are some common design patterns and the code to implement them:
 
-[[toc]]
+### Table of Contents
+- [Assign labels](#assign-labels)
+- [Choose a neighbor](#choose-a-neighbor)
+- [Make and cut ties](#make-and-cut-ties)
+- [Showing transitivity](#showing-transitivity)
+- [Surveys in breadboard](#surveys-in-breadboard)
 
 -------------------------------------------------
 

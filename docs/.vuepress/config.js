@@ -3,17 +3,8 @@ module.exports = {
   description: 'A software platform for developing and conducting human interaction experiments on networks using online participants.',
   base: '/docs/',
   dest: 'dist/docs',
+  plugins: ['versioning'],
   themeConfig: {
-    nav: [{
-      text: 'Other Versions',
-      items: [{
-        text: '2.4.0',
-        link: '/2.4.0/'
-      }, {
-        text: '2.3.0',
-        link: '/2.3.0/'
-      }]
-    }],
     sidebar: {
       '': [
         '/getting-started',
@@ -21,6 +12,7 @@ module.exports = {
         {
           title: 'Deployment',
           path: '/deployment/',
+          collapsable: false,
           children: [
             '/deployment/installing-an-ssl-certificate',
             '/deployment/setting-up-a-server',
@@ -32,10 +24,30 @@ module.exports = {
         }, {
           title: 'Scripting',
           path: '/scripting/',
+          collapsable: false,
           children: [
+            '/scripting/event-bus',
             '/scripting/graph-algorithms',
-            '/scripting/language-reference',
             '/scripting/recipes'
+          ]
+        },
+        {
+          title: 'Modules',
+          path: '/modules/',
+          collapsable: false,
+          children: [
+            '/modules/form',
+            '/modules/chat',
+            '/modules/crossword',
+          ]
+        },
+        {
+          title: 'API',
+          path: '/api/',
+          collapsable: false,
+          children: [
+            '/api/frontend/',
+            '/api/scripting/',
           ]
         },
         '/faq',
