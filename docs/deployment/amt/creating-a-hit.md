@@ -3,14 +3,40 @@ The Create HIT options can be found in the [AMT dialog](The-AMT-Assignments-Dial
 
 Before submitting a HIT, make sure you have launched a new Experiment Instance using the Launch dialog. To submit a HIT to AMT fill out the form in the AMT dialog and click the "Create HIT" button:
 
-#### Important Experiment Considerations
+## Important Experiment Considerations
 
-* You need to make sure that you have provided a Submit form at the end of the task; otherwise, the workers will be unable to submit their assignments for approval. See the documentation on the [g.getSubmitForm method](Language-Reference#getSubmitForm) for information on how to generate this form.
-* You cannot guarantee that all workers will participate until the end of the task. Make sure you have implemented a procedure for dropping idle players. See the DropPlayerStep in the included PublicGoods game for an example.  
-* If you do drop players or start the game before players are ready you will have to filter out those players as the game proceeds. In the example PublicGoods Experiment we set an ```active``` property of the nodes and filter out inactive players using the ```g.V.filter{it.active}``` method.
+### Paying players
+When an AMT worker is done with a game they need to submit the HIT in before they can be paid. After they have submitted the HIT, you will have a chance to review their submission before approving their pay. Breadboard provides a default form for submitting HITs which can be show to players after the game is complete. Once the worker has submitted their HIT they will appear in AMT Dialog and their pay can be reviewed before approving it.
+##### Example
+```groovy
+finishStep = stepFactory.createStep()
+
+finishStep.run = {
+  g.V.each { v->
+    v.text = "<h2>Thank you for participating in this task.</h2>"
+    v.text += "<p>Please submit the assignment below.</p>"
+    v.text += g.getSubmitForm(v, v.score)
+  }
+}
+```
+
+For more information about the getSubmitForm method refer to the [Language Reference](../../scripting/language-reference.md#g-getsubmitform-player-bonus-reason-sandbox-comments).
 
 
-#### Details
+### Dealing with inactive players
+AMT players will occasionally not finish or start the game after joining. This must be handled using experiment code and can be solved in several different ways. With synchronous experiments it is usually a good idea to make sure that all players are still active by checking if they are still actively submitting choices. Typically, this would be done using a timer that resets whenever the player sends some activity. This gives the player some amount of time to perform an action before being told that they will be dropped from the game.
+
+Fortunately, Breadboard has some helpful methods built in to deal with this situation.
+
+```groovy
+// TODO How should we drop player correctly
+```
+
+If you do drop players or start the game before players are ready you will have to filter out those players as the game proceeds. In the example PublicGoods Experiment we set an `active` property of the nodes and filter out inactive players using the `g.V.filter{it.active}` method.
+
+## Details
+All of the parameters available in the HIT submission form and their descriptions.
+
 | Parameter                        | Description |
 |----------------------------------|-------------|
 | Title                            | This should be a short (< 128 characters), descriptive, title to identify the task. | 

@@ -343,6 +343,8 @@ def timer = g.addTimer([
 
 ```
 
+## Events
+TODO
 
 ## Edge
 Once an edge is retrieved from the graph either by using the ```g.getEdge(v1, v2)``` method or by iterating through the edges in the graph you can get/set custom properties of the edge or access the following defined properties and methods. In these examples, we have assigned an edge to the variable ```e```.
