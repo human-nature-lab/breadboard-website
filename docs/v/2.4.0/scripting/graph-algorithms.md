@@ -1,4 +1,6 @@
 # Graph Algorithms
+Several graph algorithms are already implemented in Breadboard. This list includes
+most of them and example output for each.
 
 | Graph                                        | Documentation                                    | Result                                                                                    |
 |----------------------------------------------|--------------------------------------------------|-------------------------------------------------------------------------------------------|

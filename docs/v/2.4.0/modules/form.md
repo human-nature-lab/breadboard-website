@@ -10,10 +10,20 @@ tutorials in Breadboard. See the [Forms API](../api/modules/form) documentation 
 [[toc]]
 
 ## Usage
-TODO
+Before using the form, add the `Form` component to your Vue template somewhere. 
+This component will render a form when one is assigned to the player in the 
+script engine.
+
+```vue
+<template>
+  <Form :player="player" />
+</template>
+```
 
 ## Examples
 ### Trivial example
+Create a simple tutorial with a description followed by a simple "choice"
+question.
 ```groovy
 def tutorial = new Form([
   name: "tutorial",
@@ -63,6 +73,9 @@ tutorial.addPlayer(player)
 
 
 ### Scale question
+Create a Likert scale type question. Define the available choices and questions
+as two separate lists.
+
 ```groovy
 def quiz = new Form([
   name: "quiz",
@@ -100,3 +113,8 @@ def quiz = new Form([
 ```
 
 
+### Randomize everything
+TODO
+
+### Use a subset of questions
+TODO

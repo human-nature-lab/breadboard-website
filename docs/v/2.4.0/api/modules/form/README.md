@@ -1,5 +1,8 @@
 # Form Module APIs
 
+Find more information and examples of forms [here](../../../modules/form.md).
+
+[[toc]]
 ## Form
 
 ### Constructor
@@ -44,7 +47,7 @@ Add a player to this form
 Add multiple players to this form at once
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| players | List<Vertex> | | A list of player vertices |
+| players | List\<Vertex\> | | A list of player vertices |
 
 #### calculatePercent(Score score)
 Convert a score into a percentage.
@@ -61,6 +64,9 @@ Clear out all players / results for this form
 End the form and perform cleanup for all players
 ####	getScore(Vertex player)
 This method will calculate the percentage of correct responses for this player
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| player | Vertex | | The player node to score |
 
 ##### Returns
 [`Score`](#Score)
@@ -74,4 +80,11 @@ TODO: Add Pages and Questions
 # Interfaces
 
 ## Score
-A map with the following parameters.
+A map with the following parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| correct | Integer | | How many answers were correct |
+| incorrect | Integer | | How many answers were not correct |
+| total | Integer | | How many questions were asked |
+| skipped | Integer | | How many questions were skipped |

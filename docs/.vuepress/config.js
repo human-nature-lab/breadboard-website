@@ -1,5 +1,3 @@
-const { sidebarRel } = require('./util');
-
 module.exports = {
   title: 'Breadboard Docs',
   description: 'A software platform for developing and conducting human interaction experiments on networks using online participants.',
@@ -11,7 +9,7 @@ module.exports = {
   themeConfig: {
     logo: '/images/logo_breadboard_162_x_40.png',
     nav: [
-      { text: 'Home', link: '../' },
+      { text: 'Website', link: 'https://breadboard.yale.edu' },
       {
         text: 'Version',
         items: [{
@@ -81,8 +79,8 @@ module.exports = {
           collapsable: false,
           children: [
             'api/scripting/',
+            'api/frontend/',
             'api/modules/',
-            'api/frontend/'
           ]
         },
         'upgrade-guide',
