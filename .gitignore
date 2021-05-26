@@ -7,3 +7,4 @@ email_log.txt
 node_modules
 .netlify
 dist
+temp

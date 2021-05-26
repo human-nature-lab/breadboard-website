@@ -1,3 +1,47 @@
 .youtube {
   max-width: 100%;
 }
+
+header.navbar {
+  background-color: $navbarBgColor;
+  
+  color: white !important;
+  .site-name {
+    color: white;
+  }
+
+  .dropdown-wrapper {
+    .dropdown-title {
+      color: white !important;
+    }
+    .dropdown-item {
+      color: $accentColor;
+    }
+  }
+  
+  .links {
+    background-color: transparent;
+    
+    a.router-link-active {
+      color: white;
+    }
+    
+    .nav-links {
+      a:hover {
+        color: $darkBlue 
+      }
+    }
+
+    .nav-item > a:not(.external):hover, .nav-item > a:not(.external).router-link-active {
+      border-bottom: 2px solid white;
+    }
+  }
+}
+
+footer.footer {
+  background-color: $footerBgColor;
+  .copyright {
+    color: white;
+  }
+  
+}

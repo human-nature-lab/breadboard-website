@@ -8,7 +8,6 @@ const excluded = ['SVGGraph.vue']
 const clientComponents = walk('./frontend/client/components', { max_depth: 1 }).filter(f => 
   f.endsWith('.vue') && !excluded.includes(path.basename(f))
 )
-const coreLibs = walk('./frontend/core').filter(f => !excluded.includes(path.basename(f)))
 const modules = {
   chat: {
     description: fs.readFileSync('./snippets/chat-module.md', 'utf-8'),
@@ -56,7 +55,7 @@ async function run() {
     await genVueFiles(
       `${titleCase(name)} Module`,
       modules[name].files,
-      `docs/api/modules/${name}.md`,
+      `docs/api/modules/${name}/README.md`,
       modules[name].description
     )
   }
@@ -64,10 +63,10 @@ async function run() {
   let indexContent = `# Modules\n${generated}\n`
 
   for (const name in modules) {
-    indexContent += `- [${titleCase(name)}](./${name}.md)\n`
+    indexContent += `- [${titleCase(name)}](./${name}/)\n`
   }
 
-  await fs.promises.writeFile(path.join(__dirname, 'docs/api/frontend/modules/README.md'), indexContent, 'utf-8')
+  await fs.promises.writeFile(path.join(__dirname, 'docs/api/modules/README.md'), indexContent, 'utf-8')
 
 }
 

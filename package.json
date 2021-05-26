@@ -6,7 +6,7 @@
   "main": "send-email.js",
   "scripts": {
     "start": "vuepress dev docs",
-    "build": "vuepress build docs",
+    "build": "sh build.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -19,7 +19,8 @@
   "author": "Netlify",
   "license": "MIT",
   "dependencies": {
-    "mailgun-js": "^0.22.0"
+    "mailgun-js": "^0.22.0",
+    "vuepress-plugin-sitemap": "^2.3.1"
   },
   "devDependencies": {
     "@vuedoc/md": "^3.2.0",
@@ -34,6 +35,8 @@
     "typescript": "^4.2.4",
     "vuepress": "^1.8.2",
     "vuepress-plugin-versioning": "^4.10.2",
+    "vuepress-plugin-zooming": "^1.1.8",
+    "vuepress-theme-titanium": "^4.9.0",
     "walkdir": "^0.4.1"
   }
 }
