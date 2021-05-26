@@ -178,6 +178,7 @@ This method returns an Edge as identified by the two connected vertices or null 
 
 ##### Parameters
   - **v1, v2**: Two vertices, as returned by g.getVertex, that are connected by an edge 
+  rm
 
 #### g.getVertex(id)
 
@@ -201,7 +202,7 @@ If a vertex, ```v``` is provided, this method removes the edges connected to the
 
 This method removes all vertices in the graph. Note: This method does not handle dropping players from a game (see ```g.empty()```).
 
-#### <a name="getSubmitForm">g.getSubmitForm</a>(player, bonus, [reason], [sandbox], [comments])
+#### g.getSubmitForm(player, bonus, [reason], [sandbox], [comments])
 
 This utility method returns a submit form that can be displayed to AMT workers at the completion of their task.
 

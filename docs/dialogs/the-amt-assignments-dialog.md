@@ -5,7 +5,7 @@
 When breadboard is connected to your requestor AMT credentials you'll be able to view and make changes to all of the HITs and assignments the connected AMT account has created.
 
 ### Connecting your requestor account
-1. Create an [AMT requestor account](Creating-an-AMT-Requester-Account)
+1. Create an [AMT requestor account](../deployment/amt/creating-an-amt-requester-account.md)
 2. Run breadboard with your access and secret keys by adding them to*breadboard.sh*
 	- Add `-DAMT_ACCESS_KEY={your access key}` and `-DAMT_SECRET_KEY={your secret key}` at the end of the *breadboard.sh* or *breadboard.bat* file
 
@@ -18,7 +18,8 @@ Once your requestor account credentials are connected correctly, there should be
 
 ### Creating HITs
 An experiment will need to be running before you can create a HIT via the *Create HIT* tab. Breadboard will not create additional assignments to the number entered in *Max. Assignments* so additional assignments will need to be created if there are problems with assignments being reserved, but players not joining. A general rule of thumb is to request 150% of the minimum number of assignments desired.
-More details can be found in the [AMT Dialog section](Creating-A-HIT)
+
+Find out more details about [creating a HIT](../deployment/amt/creating-a-hit.md).
 
 #### Allow repeat play
 Breadboard has the option to prevent players from playing a single experiment multiple times OR prevent players from any experiments that have been run on this instance of breadboard.
@@ -46,7 +47,7 @@ The displayed Assignments table will provide the following information:
 | Worker ID                      | This is a unique ID that identifies the worker. This ID can be used to link workers who participated in multiple experiment instances. |
 | Accept Time                    | The date and time when the worker accepted the assignment. |
 | Submit Time                    | The date and time when the worker submitted the assignment. |
-| Bonus                          | Click the "Grant Bonus" button to automatically grant the specified bonus to the worker. The amount is what you provided as the ```reward``` parameter to the [g.getSubmitForm](Language-Reference#get-submit-form) method. |
+| Bonus                          | Click the "Grant Bonus" button to automatically grant the specified bonus to the worker. The amount is what you provided as the ```reward``` parameter to the [g.getSubmitForm](../scripting/language-reference.md#g-getsubmitform-player-bonus-reason-sandbox-comments) method. |
 | Reason                         | This text label identifies how the worker completed the game. You can provide this as the ```reason``` parameter of the g.getSubmitForm method. |
 | Status                         | Click the "Approve" button to pay the worker the assignment reward. Click the "Reject" button if the worker did not adequately complete the task. |
 | Block Worker                   | A blocked worker will no longer be able to participate in ANY of your tasks. **Warning: Workers' reputations are negatively affected by being blocked. Use the Assignment Completed button and Disallow Previous Players to prevent repeat play.** |

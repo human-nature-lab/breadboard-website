@@ -4,7 +4,7 @@
 3. [Create an AMT Requester Account](Creating-an-AMT-Requester-Account)
 4. [Configuring breadboard](Configuring-breadboard)
 
-In order for Amazon Mechanical Turk workers to view your experiment without security errors you will have to provide them with a secure, https, connection to your instance of breadboard. To install a SSL certificate for use with breadboard, make sure you have [configured your server properly](Setting-up-a-Server) with a domain name and then proceed with the following steps:
+In order for Amazon Mechanical Turk workers to view your experiment without security errors you will have to provide them with a secure, https, connection to your instance of breadboard. To install a SSL certificate for use with breadboard, make sure you have [configured your server properly](./setting-up-a-server.md) with a domain name and then proceed with the following steps:
 
 1. Create a Keystore file
 	* Log into your server and run the following command:
@@ -24,4 +24,4 @@ In order for Amazon Mechanical Turk workers to view your experiment without secu
   * Import the certificate into the keystore with the following command:
     ```keytool -import -keystore /home/[YOUR LOGIN NAME]/.keystore -alias [YOUR ALIAS] -file [YOUR CERTIFICATE FILE.p7b]```
   * Type 'yes' and hit enter when prompted
-5. Proceed to [creating an AMT Requester account](Creating-an-AMT-Requester-Account)
+5. Proceed to [creating an AMT Requester account](./amt/creating-an-amt-requester-account)
