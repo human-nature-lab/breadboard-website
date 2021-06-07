@@ -1,7 +1,7 @@
 # Event Bus
 Breadboard has an event bus API (defined as `events`) intended to simplify message passing between the server and client and enable more complex applications such as chat or real-time collaboration.
 
-See the [API documentation](../api/scripting#events) for more information.
+See the [events API documentation](../api/scripting/README.md#events) for more information.
 
 [[toc]]
 
@@ -11,7 +11,7 @@ See the [API documentation](../api/scripting#events) for more information.
 The most common use-case will be sending messages back and forth to a single player. There are some convenience functions on the player node to help with this process.
 
 #### Script engine
-In the script engine add some code to listen for and respond to chat messages
+In the script engine add a message handler to handle chat messages.
 ```groovy
 
 def player = g.getVertex(playerId)
@@ -27,7 +27,8 @@ player.on("chat", { v, data ->
 ```
 
 #### Browser
-In the browser add similar methods to listen for and send chat messages
+In the browser add similar methods to respond to chat messages and also send
+them.
 
 ```javascript
 
@@ -46,9 +47,10 @@ Breadboard.send('chat', {
 
 
 ### Global events
-Sometimes it might be necessary to communicate with multiple players at the same time. For these cases, the global `events` API will help.
+Sometimes it might be necessary to communicate with multiple players at the same time. For these cases, the global `events` API cam broadcast the message
+to multiple players.
 
-#### Broadcast
+#### Create an admin-chat
 ```groovy
 
 def player = g.getVertex(playerId)

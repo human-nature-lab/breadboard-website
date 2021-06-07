@@ -344,7 +344,34 @@ def timer = g.addTimer([
 ```
 
 ## Events
-TODO
+
+### Methods
+
+#### events.on(String name, Closure handler)
+Respond to an event with this name.
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| name | String | | The name used to define this event. All events emitted with this name will call the handler. |
+| handler | Closure | | A closure that is called with parameters matching the data passed when the event was emitted. |
+
+
+#### events.off(String name)
+Remove all of the handlers for this event.
+#### events.off(String name, Closure handler)
+Remove a specific handler for this event.
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| name | String | | The name used to define the event we want to stop listening to |
+| handler | Closure | | A reference to the closure that was passed to `events.on` |
+
+#### events.emit(String name, Object... payload)
+Emit an event with this name and pass any data to each of the event handlers.
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| name | String | | The name used to define the event we want to stop listening to |
+| payload | Object | | One or more pieces of data to pass to each listener for this event. |
 
 ## Edge
 Once an edge is retrieved from the graph either by using the ```g.getEdge(v1, v2)``` method or by iterating through the edges in the graph you can get/set custom properties of the edge or access the following defined properties and methods. In these examples, we have assigned an edge to the variable ```e```.

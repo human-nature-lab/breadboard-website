@@ -19,8 +19,10 @@ await Breadboard.loadModules('chat')
 
 Add the chat component somewhere in your `client-html` file:
 
-```html
+```vue
+<template>
   <BreadboardChat :player="player"></BreadboardChat>
+</template>
 ```
 
 In the scripting engine enable chat between two or more players using the chat

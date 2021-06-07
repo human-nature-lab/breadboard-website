@@ -76,11 +76,71 @@ Add a closure to run when the form is completed by a player
 Start the form.
 
 
-TODO: Add Pages and Questions
 # Interfaces
 
+## Form Definition
+A Map with the following parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| name | String | | The unique key to use to identify this form
+| stepper *optional* | Boolean | `true` | Indicates whether or not the progress through the form should be shown
+| nonLinear *optional* | Boolean | `false` | Indicates whether the form can only be navigated in order (this is the default) or if the players can jump to different pages
+| recordResults *optional* | Boolean | `true` | Record an event for each page submission
+| recordNav *optional* | Boolean | `false` | Record an event for each form navigation
+| pageDefaults *optional* | [Page Definition](#page-definition) | `[:]` | Sets default options for each page added to this form
+| sectionDefaults *optional* | [Section Definition](#section-definition) | `[:]` | Sets default options for each section added to this form
+| questionDefaults *optional* | [Question Definition](#question-definition) | `[:]` | Sets default options for each question added to this form
+
+## Page Definition
+A Map with the following parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| title *optional* | String | `""` | The title to display for this page |
+| onEnter *optional* | Closure | | A closure that will be called when a player enters a page. |
+| onExit *optional* | Closure | | A closure that will be called when a player exits a page. |
+| sectionDefaults *optional* | [Section Definition](#section-definition) | | Default values to use for each section of this page. |
+| blocks \| questions | List<[Question Definition](#question-definition)> | | The questions to show on this page |
+| groups \| sections *optional* | List<[Section Definition](#section-definition)> | | The sections to show on this page. Can't be used with "questions" or "blocks". |
+
+## Section Definition
+A Map with the following parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| blocks \| questions | List<[QuestionDefinition](#question-definition)> | | Questions to be shown in this section |
+| subset *optional* | Integer | | How many questions to randomly show to each player. Implies `randomize: true` |
+| randomize *optional* | Boolean | `false` | Whether or not to randomize the order of questions shown to each player |
+| questionDefaults *optional* | [QuestionDefinition](#question-definition) | `[:]` | Default values to use for each question in this section |
+
+## Question Definition
+The question definition will vary depending on the question type. The base 
+question definition is a Map with the following parameters.
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| type | "choice", "html", "scale", "text" | | The type of question to use |
+| name | String | | The unique name to use for this question. Data recorded for this question will appear under this name |
+| content \| contentKey | String | | Either a string with the content for this question or the name of content defined in the content dialog |
+| answer *optional* | String | | The correct answer for this question |
+| required *optional* | Boolean | `true` | Whether or not this question can be skipped |
+| fills *optional* | List<String> | | The fills to use when using the `contentKey` property |
+
+### Choice Question
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| multiple *optional* | Boolean | `false` | Allow the user to select more than one choice |
+| choices | List<String | Choice> |  | Which choices to display to the player |
+| randomize | Boolean | `false` | Whether or not to randomize the order of the choices |
+
+### Scale Question
+TODO
+
+### Text Question
+TODO
+
 ## Score
-A map with the following parameters
+A Map with the following parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
