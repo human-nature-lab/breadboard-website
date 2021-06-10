@@ -83,6 +83,7 @@ module.exports = {
             'api/modules/',
           ]
         },
+        'client/',
         'upgrade-guide',
         'faq',
         'release-history',
