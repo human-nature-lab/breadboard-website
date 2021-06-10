@@ -161,7 +161,7 @@ $(function () {
         })
     });
 
-    $('.navigation ul a').on('click', function (ev) {
+    $('.navigation ul a.scroll').on('click', function (ev) {
         ev.preventDefault();
         var target = $(this).attr('href');
         var $target = $(target);

@@ -9,7 +9,7 @@ module.exports = {
   themeConfig: {
     logo: '/images/logo_breadboard_162_x_40.png',
     nav: [
-      { text: 'Website', link: 'https://breadboard.yale.edu' },
+      { text: 'Website', link: 'https://breadboard.yale.edu', target: '_self' },
       {
         text: 'Version',
         items: [{
