@@ -326,7 +326,7 @@ Add a timer to a player that they can see as a progress bar while playing. If "p
 | params | Map |  | A map where all of the other properties are optional. |
 
 ##### Returns
-[`SharedTimer`](#shared-timer)
+[`SharedTimer`](#sharedtimer)
 
 ##### Example
 ```groovy
@@ -516,9 +516,108 @@ timer.scheduleAtFixedRate({
 ```
 
 ## SharedTimer
-A shared instance of BBTimer that is shared with multiple players and shown to 
+A timer that is assigned to one or more players. Removes the need to create duplicate timers for each player.
+
+```groovy
+// Assign a timer to all players in the game
+def timer = new SharedTimer([
+  time: 1000,
+  players: g.V.toList()
+])
+
+timer.start()
+```
+
+### Constructor
+#### new SharedTimer(Integer duration)
+#### new SharedTimer(SharedTimerOpts opts)
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| duration | Integer | | How long the timer should run for in milliseconds |
+| opts | [SharedTimerOpts](#sharedtimeropts) | | A map with options for this timer |
+
+### Methods
+
+#### SharedTimer.addTime(Integer duration)
+Add time to an existing timer
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| delta | Integer | | The number of milliseconds to add to the timer |
+
+#### SharedTimer.addPlayer(Vertex player)
+Add a single player to this timer
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| player | Vertex | | The player to add to this timer |
+
+#### SharedTimer.addPlayers(List\<Vertex\> players)
+Add multiple players at once
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| players | List\<Vertex\> | | The players to add to this timer |
+
+#### SharedTimer.cancel()
+Cancel the timer early and remove it from each player
+
+#### SharedTimer.onDone(Closure cb)
+Register a closure to be called when the timer has ended
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| cb | Closure | | Closure without arguments |
+
+#### SharedTimer.pause()
+Pause the timer
+#### SharedTimer.removePlayer(Vertex player)
+Remove a single player from the timer.
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| player | Vertex | | The player to remove |
+
+#### SharedTimer.restart()
+Restart the timer as though it just started
+
+#### SharedTimer.resume()
+Resume a paused timer
+
+#### SharedTimer.setDuration(Integer duration)
+Set the duration for this timer
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| duration | Integer | | The new timer duration in milliseconds |
+
+#### SharedTimer.tick(Integer delta)
+This updates the timer for each player attached to this timer.
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| delta | Integer | | The number of milliseconds to increase the timer by. | 
 
 # Interfaces
+
+
+## SharedTimerOpts
+A Map with the following key/value pairs
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| time | Integer | | Timer time in seconds |
+| duration | Integer | | Timer time in milliseconds |
+| player | Vertex | | A player to add this timer to |
+| players | List\<Vertex\> | | A list of players to add this timer to |
+| lazy | Boolean | | Start the timer when the first player is added |
+| result | Closure | | Call this closure when the timer expires |
+| timerText | String | | The timer label to display |
+| name | String | | The unique key to use for this timer |
+| updateRate | Integer | | How often this timer should update |
+| type | String | `"time"` | Valid options are "time" and "currency" |
+| direction | String | `"down"` | Valid options are "up" or "down" |
+| currencyAmount | Float | | Initial currency for the timer |
+| appearance | String | | The color to use to display the timer |
+| content | Map | | A content map to use for fetching the timer label content |
 
 ## Choice
 A Map with the following key/value pairs

@@ -36,7 +36,7 @@ Field      *   [Constructor](#constructor_detail)
     class SharedTimer
     extends [BreadboardBase](../DefaultPackage/BreadboardBase.html)
     
-    A timer that is assigned to one or more players. Removes the need to create duplicate timers for each player.
+   A timer that is assigned to one or more players. Removes the need to create duplicate timers for each player.
     
 
 *   *   ### Constructor Summary
@@ -215,10 +215,11 @@ Field      *   [Constructor](#constructor_detail)
             
             `{Vertex}` - player - The player to remove
             
+            
         
         *   #### java.lang.Object **restart**()
             
-            Restart the timer as though it just started
+            
             
         
         *   #### java.lang.Object **resume**()
