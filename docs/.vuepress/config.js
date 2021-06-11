@@ -30,7 +30,7 @@ module.exports = {
         'getting-started',
         {
           title: 'Dialogs',
-          path: 'dialogs/',
+          path: '/v/2.4.0/dialogs/',
           collapsable: false,
           children: [
             'dialogs/the-script-dialog.md',
@@ -42,7 +42,7 @@ module.exports = {
         },
         {
           title: 'Scripting',
-          path: 'scripting/',
+          path: '/v/2.4.0/scripting/',
           collapsable: false,
           children: [
             'scripting/graph-algorithms',
@@ -52,7 +52,7 @@ module.exports = {
         },
         {
           title: 'Modules',
-          path: 'modules/',
+          path: '/v/2.4.0/modules/',
           collapsable: false,
           children: [
             'modules/form',
@@ -62,7 +62,7 @@ module.exports = {
         },
         {
           title: 'Deployment',
-          path: 'deployment/',
+          path: '/v/2.4.0/deployment/',
           collapsable: false,
           children: [
             'deployment/installing-an-ssl-certificate',
@@ -75,7 +75,7 @@ module.exports = {
         },
         {
           title: 'API',
-          path: 'api/',
+          path: '/v/2.4.0/api/',
           collapsable: false,
           children: [
             'api/scripting/',

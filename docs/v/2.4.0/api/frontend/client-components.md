@@ -8,6 +8,8 @@ extendable Graph visualization, Timers, Connection Status, Choices, etc.
 
 A few optional [modules](../modules) are also available to use.
 
+[[toc]]
+
 ## Choice
 
 Choices in Breadboard show up as buttons. This component makes it trivial to
@@ -131,6 +133,53 @@ at the same time and this component creates them.
 | Name                | Type     | Description       |
 | ------------------- | -------- | ----------------- |
 | `player` *required* | `Object` | The player object |
+
+
+
+## SVGGraph
+
+The SVG Graph component shows the graph to the player and updates in real time.
+It allows you to easily react to
+click events on nodes and edges within the graph, trivially transform the graph
+by modifying node sizes and colors,
+customize the appearance of the graph with images and text and customize the
+force-directed layout algorithm without
+modifying the component itself.
+
+### Slots
+
+| Name           | Description                                                                                                                                    |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `edge`         | Replace the edge with your own edge. This could be used to replace lines with Bezier curves or arrows. Positioning has to be done manually.    |
+| `edge-label`   | Add an element at the center of the edge                                                                                                       |
+| `node`         | Replace the entire node with your own node. Positioning is done automagically. This might be used to change the circle to an image or a square |
+| `node-content` | Add something inside the node. This object will be positioned relative to the origin of the node (upper left) and must be centered manually    |
+
+### Props
+
+| Name                | Type                                       | Description                                                                                                                             | Default                                                                                  |
+| ------------------- | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `player` *required* | `PlayerData`                               | The player object sent up by breadboard                                                                                                 |                                                                                          |
+| `graph` *required*  | `Graph`                                    | The client graph object                                                                                                                 |                                                                                          |
+| `layout`            | `LayoutOptions`                            | The force-directed layout options                                                                                                       | `() => ({ linkDistance: 100, chargeStrength: -500, centerRepel: 500 } as LayoutOptions)` |
+| `center-ego`        | `Boolean`                                  | A boolean indicating whether or not the ego should be centered on the screen                                                            | `true`                                                                                   |
+| `node-stroke`       | `string` &#124; `ObjMapFunc<Node, string>` | Change the color of each node border by supplying a new color or a mapping function                                                     | `"black"`                                                                                |
+| `node-stroke-width` | `number` &#124; `ObjMapFunc<Node, number>` | Change the size of each node border by supplying a new size or a mapping function                                                       | `2`                                                                                      |
+| `node-fill`         | `string` &#124; `ObjMapFunc<Node, string>` | Change the fill color of each node using a color string or a mapping function                                                           | `"grey"`                                                                                 |
+| `node-radius`       | `number` &#124; `ObjMapFunc<Node, number>` | Change the size of each node using a number or a mapping function                                                                       | `30`                                                                                     |
+| `edge-stroke-width` | `number` &#124; `ObjMapFunc<Edge, number>` | Change the size of each edge using a number or a mapping function                                                                       | `2`                                                                                      |
+| `edge-opacity`      | `number` &#124; `ObjMapFunc<Edge, number>` | Change the opacity of each edge using a number or a mapping function. This could be used to show decay of edges.                        | `1`                                                                                      |
+| `edge-stroke`       | `string` &#124; `ObjMapFunc<Edge, string>` | Change the color of each edge using a number or a mapping function.                                                                     | `"#999"`                                                                                 |
+| `graph-padding`     | `Number`                                   | How much space to try to keep around the edge of the graph. Nodes will try to stay at least this far away from the borders of the graph | `10`                                                                                     |
+| `ignored-props`     | `() => String[]`                           | Any properties that should not be assigned as attributes on the nodes                                                                   | `() => ['text', 'choices', 'x', 'y', 'timers', 'timerUpdatedAt']`                        |
+
+### Events
+
+| Name             | Description                                                                   |
+| ---------------- | ----------------------------------------------------------------------------- |
+| `nodeClick`      | <br/>**Arguments**<br/><ul><li>**`node: any`**</li><li>**`e: any`**</li></ul> |
+| `edgeClick`      | <br/>**Arguments**<br/><ul><li>**`edge: any`**</li><li>**`e: any`**</li></ul> |
+| `edgeLabelClick` | <br/>**Arguments**<br/><ul><li>**`edge: any`**</li><li>**`e: any`**</li></ul> |
 
 
 

@@ -8,9 +8,10 @@ The docs are generated with VuePress. `npm start` will launch a dev server with 
 The rest of the site is just plain html, css and js files and can be edited directly.
 
 ### Updating the API docs
-[vuedoc] is used to generate documentation for the Vue components used by Breadboard. [groovydoc] (bundled with groovy) is used to generate documentation for the Groovy side. Both of these processes result in Markdown files that are fed into VuePress to as part of the site generation process. Use `sh generate.sh` to update the Vue component documentation. Use `npm run build` to generate the groovy docs.
+[vuedoc] is used to generate documentation for the Vue components used by Breadboard. [typedoc] is used for the core TypeScript files used by the Breadboard client. Both of these processes result in Markdown files that are fed into VuePress as part of the site generation process. 
 
-To save the current documentation as a version run `npx vuepress version docs 2.4.0`
+First add a .env file with BREADBOARD_SOURCE and DOC_ROOT environment variables defined. Use the .env.example for more information. Make desired changes in the breadboard source code and then use `sh generate.sh` to update the generated parts of these docs.
+
 
 ## Local email testing
 The breadboard.yale.edu website is currently hosted via the Netlify platform. It is a static website which uses Netlify functions to handle sending an email in response to a contact form.
@@ -28,4 +29,4 @@ Note: The dev server needs to be running and your *.env* file needs to be comple
 
 
 [vuedoc]: https://github.com/vuedoc/md
-[groovydoc]: http://groovy-lang.org/groovydoc.html
+[typedoc]: https://typedoc.org/

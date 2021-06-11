@@ -4,7 +4,8 @@ const fs = require('fs')
 const mkdirp = require('mkdirp')
 const { walk, titleCase, generated } = require('./util')
 
-const excluded = ['SVGGraph.vue']
+const outRoot = process.env.DOC_ROOT || path.join(__dirname, 'docs')
+const excluded = [] //['SVGGraph.vue']
 const clientComponents = walk('./frontend/client/components', { max_depth: 1 }).filter(f => 
   f.endsWith('.vue') && !excluded.includes(path.basename(f))
 )
@@ -46,7 +47,7 @@ async function run() {
   await genVueFiles(
     'Vue browser components',
     clientComponents,
-    'docs/api/frontend/client-components.md',
+    path.join(outRoot, '/api/frontend/client-components.md'),
     fs.readFileSync('./snippets/client-components.md')
   )
 
@@ -55,7 +56,7 @@ async function run() {
     await genVueFiles(
       `${titleCase(name)} Module`,
       modules[name].files,
-      `docs/api/modules/${name}/README.md`,
+      path.join(outRoot, `/api/modules/${name}/README.md`),
       modules[name].description
     )
   }
@@ -66,7 +67,7 @@ async function run() {
     indexContent += `- [${titleCase(name)}](./${name}/)\n`
   }
 
-  await fs.promises.writeFile(path.join(__dirname, 'docs/api/modules/README.md'), indexContent, 'utf-8')
+  await fs.promises.writeFile(path.join(outRoot, '/api/modules/README.md'), indexContent, 'utf-8')
 
 }
 

@@ -11,3 +11,10 @@
 
 
 <iframe class="youtube" width="950" height="580" src="https://www.youtube.com/embed/rZTlROeZn_w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+## The Design Console
+The design console is the user interface that is used to program, design and
+run Breadboard experiments.
+
+<iframe class="youtube" width="950" height="580" src="https://www.youtube.com/embed/ihMFqfL8HW0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

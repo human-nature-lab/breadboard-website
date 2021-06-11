@@ -4,6 +4,8 @@
 This is the backbone of the breadboard browser client. This API is used to load
 all of the client JS and CSS resources and manage the WebSocket connection.
 
+[[toc]]
+
 ## Loading scripts
 ```javascript
 // In client-graph.js
@@ -27,7 +29,7 @@ init()
 
 • `Const` **Breadboard**: [*BreadboardClass*](#classesbreadboardclassmd)
 
-Defined in: [core/breadboard.ts:403](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L403)
+Defined in: [breadboard.ts:403](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L403)
 
 
 <a name="classesbreadboardclassmd"></a>
@@ -54,38 +56,6 @@ Defined in: [core/breadboard.ts:403](https://github.com/human-nature-lab/breadbo
 
 Inherited from: Emitter.constructor
 
-## Properties
-
-### config
-
-• `Private` **config**: ``null`` \| *BreadboardConfig*
-
-Defined in: [core/breadboard.ts:19](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L19)
-
-___
-
-### configMutex
-
-• `Private` **configMutex**: *Mutex*
-
-Defined in: [core/breadboard.ts:21](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L21)
-
-___
-
-### socket
-
-• `Private` **socket**: *Socket*
-
-Defined in: [core/breadboard.ts:18](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L18)
-
-___
-
-### socketMutex
-
-• `Private` **socketMutex**: *Mutex*
-
-Defined in: [core/breadboard.ts:20](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L20)
-
 ## Methods
 
 ### addScriptFromString
@@ -102,7 +72,7 @@ Load a script from text
 
 **Returns:** *Promise*<void\>
 
-Defined in: [core/breadboard.ts:199](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L199)
+Defined in: [breadboard.ts:199](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L199)
 
 ___
 
@@ -120,7 +90,7 @@ Load a script from a URL
 
 **Returns:** *Promise*<void\>
 
-Defined in: [core/breadboard.ts:182](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L182)
+Defined in: [breadboard.ts:182](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L182)
 
 ___
 
@@ -138,7 +108,7 @@ Inject styles from a string
 
 **Returns:** *Promise*<void\>
 
-Defined in: [core/breadboard.ts:215](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L215)
+Defined in: [breadboard.ts:215](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L215)
 
 ___
 
@@ -157,19 +127,7 @@ Inject CSS from a url using a "link" node
 
 **Returns:** *Promise*<void\>
 
-Defined in: [core/breadboard.ts:228](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L228)
-
-___
-
-### attachParser
-
-▸ `Private` **attachParser**(): *void*
-
-Handle parsing breadboard socket events
-
-**Returns:** *void*
-
-Defined in: [core/breadboard.ts:373](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L373)
+Defined in: [breadboard.ts:228](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L228)
 
 ___
 
@@ -181,7 +139,7 @@ Returns the connected Socket instance.
 
 **Returns:** *Promise*<Socket\>
 
-Defined in: [core/breadboard.ts:46](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L46)
+Defined in: [breadboard.ts:46](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L46)
 
 ___
 
@@ -200,7 +158,7 @@ Create default Vue instance
 
 **Returns:** *Promise*<Vue\>
 
-Defined in: [core/breadboard.ts:307](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L307)
+Defined in: [breadboard.ts:307](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L307)
 
 ___
 
@@ -212,82 +170,7 @@ Disconnect the WebSocket
 
 **Returns:** *void*
 
-Defined in: [core/breadboard.ts:69](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L69)
-
-___
-
-### dispatch
-
-▸ **dispatch**(`eventName`: *string*, ...`args`: *any*[]): *void*
-
-Dispatch an event with eventName using the 'call' method
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `eventName` | *string* |
-| `...args` | *any*[] |
-
-**Returns:** *void*
-
-Inherited from: Emitter.dispatch
-
-Defined in: node_modules/goodish/dist/Emitter.d.ts:30
-
-___
-
-### dispatchApply
-
-▸ **dispatchApply**(`eventName`: *string*, `args?`: *any*[]): *void*
-
-Dispatch an event with eventName using the 'apply' method
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `eventName` | *string* |
-| `args?` | *any*[] |
-
-**Returns:** *void*
-
-Inherited from: Emitter.dispatchApply
-
-Defined in: node_modules/goodish/dist/Emitter.d.ts:36
-
-___
-
-### emit
-
-▸ **emit**(`eventName`: *string*, ...`args`: *any*[]): *void*
-
-Alias for the dispatch method
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `eventName` | *string* |
-| `...args` | *any*[] |
-
-**Returns:** *void*
-
-Inherited from: Emitter.emit
-
-Defined in: node_modules/goodish/dist/Emitter.d.ts:42
-
-___
-
-### getCoreRoot
-
-▸ `Private` **getCoreRoot**(): String
-
-Return the path of the breadboard core script
-
-**Returns:** String
-
-Defined in: [core/breadboard.ts:393](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L393)
+Defined in: [breadboard.ts:69](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L69)
 
 ___
 
@@ -297,7 +180,7 @@ ___
 
 **Returns:** *object*
 
-Defined in: [core/breadboard.ts:105](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L105)
+Defined in: [breadboard.ts:105](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L105)
 
 ___
 
@@ -309,21 +192,7 @@ Get an instance of the client graph
 
 **Returns:** *Promise*<Graph\>
 
-Defined in: [core/breadboard.ts:362](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L362)
-
-___
-
-### hasListeners
-
-▸ **hasListeners**(): *boolean*
-
-Getter to check if any listeners are present on this emitter
-
-**Returns:** *boolean*
-
-Inherited from: Emitter.hasListeners
-
-Defined in: node_modules/goodish/dist/Emitter.d.ts:50
+Defined in: [breadboard.ts:362](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L362)
 
 ___
 
@@ -335,7 +204,7 @@ Loads the legacy, angular.js client code. Replaces the SPA anchor with the old a
 
 **Returns:** *Promise*<void\>
 
-Defined in: [core/breadboard.ts:329](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L329)
+Defined in: [breadboard.ts:329](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L329)
 
 ___
 
@@ -347,7 +216,7 @@ Load the client config.
 
 **Returns:** *Promise*<BreadboardConfig\>
 
-Defined in: [core/breadboard.ts:27](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L27)
+Defined in: [breadboard.ts:27](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L27)
 
 ___
 
@@ -367,7 +236,7 @@ Load one or more modules using their names
 
 **Returns:** *Promise*<void\>
 
-Defined in: [core/breadboard.ts:281](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L281)
+Defined in: [breadboard.ts:281](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L281)
 
 ___
 
@@ -385,7 +254,7 @@ Load Vue, Vuetify and Breadboard component dependencies
 
 **Returns:** *Promise*<void\>
 
-Defined in: [core/breadboard.ts:247](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L247)
+Defined in: [breadboard.ts:247](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L247)
 
 ___
 
@@ -397,117 +266,7 @@ Login method
 
 **Returns:** *Promise*<void\>
 
-Defined in: [core/breadboard.ts:159](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L159)
-
-___
-
-### off
-
-▸ **off**(`eventName`: *string*): *void*
-
-Remove an event callback by reference
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `eventName` | *string* |
-
-**Returns:** *void*
-
-Inherited from: Emitter.off
-
-Defined in: node_modules/goodish/dist/Emitter.d.ts:22
-
-▸ **off**(`eventName`: *string*, `callback`: Function): *void*
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `eventName` | *string* |
-| `callback` | Function |
-
-**Returns:** *void*
-
-Inherited from: Emitter.off
-
-Defined in: node_modules/goodish/dist/Emitter.d.ts:23
-
-▸ **off**(`eventName`: *string*, `callback`: Function, `force`: *boolean*): *void*
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `eventName` | *string* |
-| `callback` | Function |
-| `force` | *boolean* |
-
-**Returns:** *void*
-
-Inherited from: Emitter.off
-
-Defined in: node_modules/goodish/dist/Emitter.d.ts:24
-
-___
-
-### on
-
-▸ **on**(`eventName`: *string*, `callback`: Function, `context?`: *object*): *void*
-
-Add an event callback with optional context
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `eventName` | *string* |
-| `callback` | Function |
-| `context?` | *object* |
-
-**Returns:** *void*
-
-Implementation of: BreadboardMessages.on
-
-Inherited from: Emitter.on
-
-Defined in: node_modules/goodish/dist/Emitter.d.ts:15
-
-___
-
-### register
-
-▸ **register**(`eventName`: *string*): *void*
-
-Register an event type by name. This method is called when the 'on' method is called if an event of that type has
-not been registered yet.
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `eventName` | *string* |
-
-**Returns:** *void*
-
-Inherited from: Emitter.register
-
-Defined in: node_modules/goodish/dist/Emitter.d.ts:8
-
-___
-
-### removeListeners
-
-▸ **removeListeners**(): *void*
-
-Remove all listeners from this instance
-
-**Returns:** *void*
-
-Inherited from: Emitter.removeListeners
-
-Defined in: node_modules/goodish/dist/Emitter.d.ts:46
+Defined in: [breadboard.ts:159](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L159)
 
 ___
 
@@ -526,7 +285,7 @@ Send a custom event scoped to the current player. This will also trigger any glo
 
 **Returns:** *Promise*<void\>
 
-Defined in: [core/breadboard.ts:147](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L147)
+Defined in: [breadboard.ts:147](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L147)
 
 ___
 
@@ -545,7 +304,7 @@ Shortcut for sending a choice via breadboard. Helps keeps params from throwing s
 
 **Returns:** *void*
 
-Defined in: [core/breadboard.ts:93](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L93)
+Defined in: [breadboard.ts:93](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L93)
 
 ___
 
@@ -563,7 +322,7 @@ Shortcut for sending a custom event via breadboard.
 
 **Returns:** *void*
 
-Defined in: [core/breadboard.ts:139](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L139)
+Defined in: [breadboard.ts:139](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L139)
 
 ___
 
@@ -582,4 +341,4 @@ Send data to breadboard server
 
 **Returns:** *void*
 
-Defined in: [core/breadboard.ts:81](https://github.com/human-nature-lab/breadboard/blob/b1c0a18/frontend/core/breadboard.ts#L81)
+Defined in: [breadboard.ts:81](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L81)

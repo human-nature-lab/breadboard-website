@@ -33,7 +33,6 @@ The connection status component will display a message telling your participants
 The SVG graph component renders an force-directed, egocentric graph in the browser. The default html includes some examples for how images can be used for the nodes instead of the default circles.
 
 [API documentation](../api/frontend/client-components.md#svggraph)
-TODO: This documentation needs rendered
 
 ### PlayerTimers
 The player timers component renders all of the timers that are assigned to players during the game. This is the component that is updated when you use the[`g.addTimer`](../api/scripting/README.md#g-addtimer-map-params) method in the script engine.
