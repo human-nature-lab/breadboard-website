@@ -1,0 +1,9 @@
+{
+  "readme": "none",
+  "hideBreadcrumbs": true,
+  "hideInPageTOC": true,
+  "excludePrivate": true,
+  "excludeExternals": true,
+  "out": "temp",
+  "disableSources": true
+}

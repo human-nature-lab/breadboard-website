@@ -29,8 +29,6 @@ init()
 
 • `Const` **Breadboard**: [*BreadboardClass*](#classesbreadboardclassmd)
 
-Defined in: [breadboard.ts:403](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L403)
-
 
 <a name="classesbreadboardclassmd"></a>
 
@@ -72,8 +70,6 @@ Load a script from text
 
 **Returns:** *Promise*<void\>
 
-Defined in: [breadboard.ts:199](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L199)
-
 ___
 
 ### addScriptFromURL
@@ -90,8 +86,6 @@ Load a script from a URL
 
 **Returns:** *Promise*<void\>
 
-Defined in: [breadboard.ts:182](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L182)
-
 ___
 
 ### addStyleFromString
@@ -107,8 +101,6 @@ Inject styles from a string
 | `contents` | *string* |
 
 **Returns:** *Promise*<void\>
-
-Defined in: [breadboard.ts:215](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L215)
 
 ___
 
@@ -127,8 +119,6 @@ Inject CSS from a url using a "link" node
 
 **Returns:** *Promise*<void\>
 
-Defined in: [breadboard.ts:228](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L228)
-
 ___
 
 ### connect
@@ -138,8 +128,6 @@ ___
 Returns the connected Socket instance.
 
 **Returns:** *Promise*<Socket\>
-
-Defined in: [breadboard.ts:46](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L46)
 
 ___
 
@@ -158,8 +146,6 @@ Create default Vue instance
 
 **Returns:** *Promise*<Vue\>
 
-Defined in: [breadboard.ts:307](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L307)
-
 ___
 
 ### disconnect
@@ -170,8 +156,6 @@ Disconnect the WebSocket
 
 **Returns:** *void*
 
-Defined in: [breadboard.ts:69](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L69)
-
 ___
 
 ### getCustomParams
@@ -179,8 +163,6 @@ ___
 ▸ **getCustomParams**(): *object*
 
 **Returns:** *object*
-
-Defined in: [breadboard.ts:105](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L105)
 
 ___
 
@@ -192,8 +174,6 @@ Get an instance of the client graph
 
 **Returns:** *Promise*<Graph\>
 
-Defined in: [breadboard.ts:362](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L362)
-
 ___
 
 ### loadAngularClient
@@ -204,8 +184,6 @@ Loads the legacy, angular.js client code. Replaces the SPA anchor with the old a
 
 **Returns:** *Promise*<void\>
 
-Defined in: [breadboard.ts:329](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L329)
-
 ___
 
 ### loadConfig
@@ -215,8 +193,6 @@ ___
 Load the client config.
 
 **Returns:** *Promise*<BreadboardConfig\>
-
-Defined in: [breadboard.ts:27](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L27)
 
 ___
 
@@ -236,8 +212,6 @@ Load one or more modules using their names
 
 **Returns:** *Promise*<void\>
 
-Defined in: [breadboard.ts:281](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L281)
-
 ___
 
 ### loadVueDependencies
@@ -254,8 +228,6 @@ Load Vue, Vuetify and Breadboard component dependencies
 
 **Returns:** *Promise*<void\>
 
-Defined in: [breadboard.ts:247](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L247)
-
 ___
 
 ### login
@@ -265,8 +237,6 @@ ___
 Login method
 
 **Returns:** *Promise*<void\>
-
-Defined in: [breadboard.ts:159](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L159)
 
 ___
 
@@ -285,8 +255,6 @@ Send a custom event scoped to the current player. This will also trigger any glo
 
 **Returns:** *Promise*<void\>
 
-Defined in: [breadboard.ts:147](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L147)
-
 ___
 
 ### sendChoice
@@ -304,8 +272,6 @@ Shortcut for sending a choice via breadboard. Helps keeps params from throwing s
 
 **Returns:** *void*
 
-Defined in: [breadboard.ts:93](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L93)
-
 ___
 
 ### sendCustom
@@ -321,8 +287,6 @@ Shortcut for sending a custom event via breadboard.
 | `params?` | *SimpleMap*<any\> |
 
 **Returns:** *void*
-
-Defined in: [breadboard.ts:139](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L139)
 
 ___
 
@@ -340,5 +304,3 @@ Send data to breadboard server
 | `data` | *SimpleMap*<any\> | {} |
 
 **Returns:** *void*
-
-Defined in: [breadboard.ts:81](https://github.com/human-nature-lab/breadboard/blob/40d172e/frontend/core/breadboard.ts#L81)
