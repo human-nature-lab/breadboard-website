@@ -116,30 +116,53 @@ A Map with the following parameters
 
 ## Question Definition
 The question definition will vary depending on the question type. The base 
-question definition is a Map with the following parameters.
+question definition is a Map with the following parameters and the parameters 
+defined in [ContentMap].
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | type | "choice", "html", "scale", "text" | | The type of question to use |
 | name | String | | The unique name to use for this question. Data recorded for this question will appear under this name |
-| content \| contentKey | String | | Either a string with the content for this question or the name of content defined in the content dialog |
 | answer *optional* | String | | The correct answer for this question |
 | required *optional* | Boolean | `true` | Whether or not this question can be skipped |
-| fills *optional* | List<String> | | The fills to use when using the `contentKey` property |
 
 ### Choice Question
+Show either a radio group or checkboxes depending on whether or not there can
+be more than one choice selected.
+
+In addition to the base question parameters, this has the following parameters:
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | multiple *optional* | Boolean | `false` | Allow the user to select more than one choice |
-| choices | List<String | Choice> |  | Which choices to display to the player |
+| choices | List\<String \| Choice\> |  | Which choices to display to the player |
 | randomize | Boolean | `false` | Whether or not to randomize the order of the choices |
 
 ### Scale Question
-TODO
+Show one or more questions using a scale to respond.
+
+In addition to the base question parameters, this has the following parameters:
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| choices | List\<String \| Choice\> |  | Which choices to display for each question |
+| items | List\<[ScaleItem](#scalechoice))\> |  | The questions to ask |
+
+### HTML Question
+Show some content to a player. Does not require a response from the participant.
+Only uses the properties defined in the [base question](#question-definition).
+
+
 
 ### Text Question
-TODO
+Receive a free-text response. Can be used to receive comments or other long form
+responses to questions.
 
-## Score
+Has the following parameters in addition to the [base question](#question-definition) parameters:
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| inputType | String | `"text"` | A valid [HTML input type](https://www.w3schools.com/html/html_form_input_types.asp) |
+
+## Interfaces
+### Score
 A Map with the following parameters
 
 | Parameter | Type | Default | Description |
@@ -148,3 +171,14 @@ A Map with the following parameters
 | incorrect | Integer | | How many answers were not correct |
 | total | Integer | | How many questions were asked |
 | skipped | Integer | | How many questions were skipped |
+
+### ScaleItem
+A Map with properties from [ContentMap] 
+and the following properties.
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| value | String \| Number | | The value used to represent this item in the data |
+
+
+[ContentMap]: ../../scripting/README.md#contentmap

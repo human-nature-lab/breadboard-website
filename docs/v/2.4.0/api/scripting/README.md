@@ -529,6 +529,7 @@ timer.start()
 ```
 
 ### Constructor
+If both `player` and `players` options are omitted, it will be assigned to all players in the graph.
 #### new SharedTimer(Integer duration)
 #### new SharedTimer(SharedTimerOpts opts)
 | Parameter | Type | Default | Description |
@@ -604,21 +605,28 @@ This updates the timer for each player attached to this timer.
 A Map with the following key/value pairs
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
-| time | Integer | | Timer time in seconds |
-| duration | Integer | | Timer time in milliseconds |
-| player | Vertex | | A player to add this timer to |
-| players | List\<Vertex\> | | A list of players to add this timer to |
-| lazy | Boolean | | Start the timer when the first player is added |
-| result | Closure | | Call this closure when the timer expires |
-| timerText | String | | The timer label to display |
+| time \| duration | Integer | | Timer time in seconds |
 | name | String | | The unique key to use for this timer |
-| updateRate | Integer | | How often this timer should update |
-| type | String | `"time"` | Valid options are "time" and "currency" |
-| direction | String | `"down"` | Valid options are "up" or "down" |
-| currencyAmount | Float | | Initial currency for the timer |
-| appearance | String | | The color to use to display the timer |
-| content | Map | | A content map to use for fetching the timer label content |
+| player *optional* | Vertex | | A player to add to this timer |
+| players *optional* | List\<Vertex\> | `g.V.toList()` | A list of players to add to this timer |
+| lazy *optional* | Boolean | `false` | Start the timer when the first player is added |
+| result *optional* | Closure | | Call this closure when the timer expires |
+| timerText *optional* | String | | The timer label to display |
+| updateRate *optional* | Integer | 1000 | How often in milliseconds this timer should update |
+| type *optional* | String | `"time"` | Valid options are "time" and "currency" |
+| direction *optional* | String | `"down"` | Valid options are "up" or "down" |
+| currencyAmount *optional* | Float | | Initial currency for the timer |
+| appearance *optional* | String | | The color to use to display the timer |
+| content *optional* | [ContentMap](#contentmap) | | A content map to use for fetching the timer label content |
 
+
+## ContentMap
+A Map with the following key/value pairs. `content` or `contentKey` are required.
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| content | String | | The content to show |
+| contentKey | String | | The name of the content to show from the [Content dialog](../../dialogs/the-content-dialog.md) |
+| fills *optional* | List\<String\> | `[]` | The fills to use when displaying the content |
 ## Choice
 A Map with the following key/value pairs
 
