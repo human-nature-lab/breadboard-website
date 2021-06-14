@@ -29,7 +29,7 @@ AMT players will occasionally not finish or start the game after joining. This m
 Fortunately, Breadboard has some helpful methods built in to deal with this situation.
 
 ```groovy
-// TODO How should we drop a player the correct way?
+// TODO What is the correct way to drop a player?
 ```
 
 If you do drop players or start the game before players are ready you will have to filter out those players as the game proceeds. In the example PublicGoods Experiment we set an `active` property of the nodes and filter out inactive players using the `g.V.filter{it.active}` method.

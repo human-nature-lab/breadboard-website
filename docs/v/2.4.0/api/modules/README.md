@@ -1,6 +1,6 @@
 # Modules
+Breadboard modules are features that may require some additional steps to use.
 
-<!-- This content was generated from source code. DO NOT EDIT -->
-
-- [Chat](./chat/)
-- [Crossword](./crossword/)
+- [Form](./form/README.md)
+- [Chat](./chat/README.md)
+- [Crossword](./crossword/README.md)

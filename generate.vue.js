@@ -61,15 +61,6 @@ async function run() {
     )
   }
 
-  let indexContent = `# Modules\n${generated}\n`
-
-  for (const name in modules) {
-    indexContent += `- [${titleCase(name)}](./${name}/)\n`
-  }
-
-  await fs.promises.writeFile(path.join(outRoot, '/api/modules/README.md'), indexContent, 'utf-8')
-
 }
-
 
 run()
