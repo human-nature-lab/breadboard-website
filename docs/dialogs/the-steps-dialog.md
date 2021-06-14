@@ -38,7 +38,7 @@ initStep.done = {
 
 In this example the participants are arranged in an Erdős–Rényi random graph, each participant is assigned an initial score and cooperation property, tutorial text is displayed, and a Ready button is displayed. Once all participants have clicked the Ready button, the 'done' closure is run and the CooperationStep is started.
 
-![The Steps Dialog](https://github.com/human-nature-lab/breadboard/wiki/images/the-steps-dialog.png)
+![The Steps Dialog](../images/the-steps-dialog.png)
 
 ### Video:
 

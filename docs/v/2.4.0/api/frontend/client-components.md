@@ -108,18 +108,20 @@ at the same time and this component creates them.
 
 ### Basic usage:
 ```vue
- <PlayerTimers
-   :player="player" />
+<template>
+  <PlayerTimers :player="player" />
+</template>
 ```
 
 ### Custom timer:
 ```vue
- <PlayerTimers
-   :player="player">
-   <template #timer="{ timer }">
-     <MyCustomTimerComponent :timer="timer" />
-   </template>
-</PlayerTimers>
+<template>
+  <PlayerTimers :player="player">
+    <template #timer="{ timer }">
+      <MyCustomTimerComponent :timer="timer" />
+    </template>
+  </PlayerTimers>
+</template>
 ```
 
 ### Slots

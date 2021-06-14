@@ -1,8 +1,4 @@
 # Setting up a server
-1. **[Setting up a server](Setting-up-a-Server)**
-2. [Installing a SSL Certificate](Installing-a-SSL-Certificate)
-3. [Create an AMT Requester Account](Creating-an-AMT-Requester-Account)
-4. [Configuring breadboard](Configuring-breadboard)
 
 First, you will need a publicly accessible web server to host breadboard on:
 
@@ -18,5 +14,4 @@ First, you will need a publicly accessible web server to host breadboard on:
   * You can download the latest version of the JDK8 [here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 4. Open ports 9000 and 9443 in your server's firewall
   * For Amazon EC2 servers, edit your server's Security Group
-5. Proceed to the steps for [installing a SSL certificate](Installing-a-SSL-Certificate).
-
+5. Proceed to the steps for [installing an SSL certificate](./installing-an-ssl-certificate.md).

@@ -492,7 +492,7 @@ player.send("random", [ data: "message here " ])
 ```
 
 ## Random
-This is an instance of java.util.Random that can be accessed using the global variable ```r```
+This is an instance of java.util.Random that can be accessed using the global variable `r`
 
 ### Methods
 In addition to the methods describe below, all methods listed [here](https://docs.oracle.com/javase/7/docs/api/java/util/Random.html) are available

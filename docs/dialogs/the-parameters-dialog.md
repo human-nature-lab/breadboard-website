@@ -15,7 +15,7 @@ To add a parameter to your experiment:
 6. Enter a short description, this will be displayed beside the parameter in the launch dialog
 7. Click the "+" button to add the parameter
 
-![The Parameters Dialog](https://github.com/human-nature-lab/breadboard/wiki/images/the-parameters-dialog.png)
+![The Parameters Dialog](../images/the-parameters-dialog.png)
 
 ### Video:
 <iframe width="750" height="480" src="https://www.youtube.com/embed/BdRtck9qQ6w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

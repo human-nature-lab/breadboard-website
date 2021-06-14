@@ -46,18 +46,18 @@ of v2.3.
 ### Upgrading Client HTML
 
 1. Change:
-```
+```html
 1       <div id="mainDiv" ng-controller="ClientCtrl">	
 ```
 
 To:
-```
+```html
 1       <div class="main" id="mainDiv">
 ```
 
 
 2. Change:
-```
+```html
 6    <div id="statusDiv" … ng-hide="client.player.dropped == true">
 7    <progressbar … </progressbar>
 8    </div>
@@ -65,7 +65,7 @@ To:
 ```
 
 To:
-```
+```html
 6    <div id="status" class="timers" 
        ng-hide="client.player.dropped == true">
 7      <bb-timer 
@@ -77,7 +77,7 @@ To:
 ```
 
 3. Change:
-```
+```html
 19      <button ng-repeat="choice in childChoices |
                            filter: {class: '!drop'}" 
           class="{{choice.class}}" 
@@ -87,7 +87,7 @@ To:
 ```
 
 To:
-```
+```html
 19       <button ng-repeat="choice in childChoices | filter: {class: '!drop'}" 
           class="{{choice.class}}" 
           ng-click="makeChoice(choice.uid)" 
@@ -101,7 +101,7 @@ To:
 ### Upgrading Client Graph
 
 1. Change:
-```
+```javascript
 1    function Graph(w, h, clientId) {
 2  
 3      var width = (w == undefined) ? 600 : w;
@@ -109,7 +109,7 @@ To:
 ```
 
 To:
-```
+```javascript
 1    function Graph(clientId, parentElement) {
 2
 3      var width = parentElement ? parentElement.clientWidth : 600;
@@ -117,7 +117,7 @@ To:
 ```
 
 2. Change:
-```
+```javascript
 14    var div = d3.select("#graph");
 15    var vis = div.append("svg:svg")
 16      .attr("width", width)
@@ -125,7 +125,7 @@ To:
 ```
 
 To:
-```
+```javascript
 14    var div = parentElement ? d3.select(parentElement) : d3.select("#graph");
 15    var vis = div.append("svg:svg")
 16      .attr("viewBox", "0 0 600 600");

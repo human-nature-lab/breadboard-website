@@ -12,7 +12,7 @@ g.ringLattice(3)
 
 This code adds 32 nodes to the graph and arranges them in a ring lattice structure.
 
-![The Script Dialog](https://github.com/human-nature-lab/breadboard/wiki/images/the-script-dialog.png)
+![The Script Dialog](../images/the-script-dialog.png)
 
 In the graph visualization, each node represents a player in the game and the ties show who will be playing with who.
 

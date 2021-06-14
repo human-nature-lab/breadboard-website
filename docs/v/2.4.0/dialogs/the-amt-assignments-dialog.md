@@ -5,7 +5,7 @@
 When breadboard is connected to your requestor AMT credentials you'll be able to view and make changes to all of the HITs and assignments the connected AMT account has created.
 
 ### Connecting your requestor account
-1. Create an [AMT requestor account](../deployment/amt/creating-an-amt-requester-account.md)
+1. Create an [AMT requestor account](../deployment/amt.md#creating-an-amt-requester-account)
 2. Run breadboard with your access and secret keys by adding them to*breadboard.sh*
 	- Add `-DAMT_ACCESS_KEY={your access key}` and `-DAMT_SECRET_KEY={your secret key}` at the end of the *breadboard.sh* or *breadboard.bat* file
 
@@ -19,7 +19,7 @@ Once your requestor account credentials are connected correctly, there should be
 ### Creating HITs
 An experiment will need to be running before you can create a HIT via the *Create HIT* tab. Breadboard will not create additional assignments to the number entered in *Max. Assignments* so additional assignments will need to be created if there are problems with assignments being reserved, but players not joining. A general rule of thumb is to request 150% of the minimum number of assignments desired.
 
-Find out more details about [creating a HIT](../deployment/amt/creating-a-hit.md).
+Find out more details about [creating a HIT](../deployment/amt.md#creating-a-hit).
 
 #### Allow repeat play
 Breadboard has the option to prevent players from playing a single experiment multiple times OR prevent players from any experiments that have been run on this instance of breadboard.

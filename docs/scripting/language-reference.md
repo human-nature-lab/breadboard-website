@@ -192,7 +192,7 @@ This method returns a vertex as identified by the provided ID or null if no vert
 This method returns ```true``` if there is an edge that connects the vertices provided or ```false``` otherwise. 
 
 ##### Parameters
-  - **v1, v2**: Two vertices, as returned by g.getVertex, that are members of the graph ```g```
+  - **v1, v2**: Two vertices, as returned by g.getVertex, that are members of the graph `g`
 
 #### g.removeEdges([optional: v])
 
@@ -209,9 +209,9 @@ This utility method returns a submit form that can be displayed to AMT workers a
 ##### Parameters
   - **player**: The vertex of the player
   - **dollars**: The amount of the bonus, in US Dollars, to be applied to the player. Should be set to 0 if no bonus is awarded
-  - **reason**: (optional) A text tag to keep track of why the player is submitting the task (e.g. dropped/too_many_players/failed_test). Defaults to ```"completed"```
-  - **sandbox**: (optional) If true, it will create a form that will submit to the AMT sandbox, useful for testing. Defaults to ```false```
-  - **comments**: (optional) If true, it will add a text area for freetext comments by the participants. These comments can be viewed by logging into the AMT Requester account and downloading the data. Defaults to ```false```
+  - **reason**: (optional) A text tag to keep track of why the player is submitting the task (e.g. dropped/too_many_players/failed_test). Defaults to `"completed"`
+  - **sandbox**: (optional) If true, it will create a form that will submit to the AMT sandbox, useful for testing. Defaults to `false`
+  - **comments**: (optional) If true, it will add a text area for freetext comments by the participants. These comments can be viewed by logging into the AMT Requester account and downloading the data. Defaults to `false`
 
 ##### Example
 ```groovy
@@ -307,7 +307,7 @@ spy.private.isSpy = true
 -------------------------------------------------
 
 ## Random
-This is an instance of java.util.Random that can be accessed using the global variable ```r```
+This is an instance of java.util.Random that can be accessed using the global variable `r`
 
 ### Methods
 In addition to the methods describe below, all methods listed [here](https://docs.oracle.com/javase/7/docs/api/java/util/Random.html) are available

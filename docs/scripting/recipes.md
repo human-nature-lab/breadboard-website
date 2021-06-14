@@ -1,12 +1,7 @@
 # Recipes
 Below are some common design patterns and the code to implement them:
 
-### Table of Contents
-- [Assign labels](#assign-labels)
-- [Choose a neighbor](#choose-a-neighbor)
-- [Make and cut ties](#make-and-cut-ties)
-- [Showing transitivity](#showing-transitivity)
-- [Surveys in breadboard](#surveys-in-breadboard)
+[[toc]]
 
 -------------------------------------------------
 
@@ -246,7 +241,7 @@ g.V.each { v->
 
 Custom inputs don't support recording data using an event property on the choice so you’ll have to add a call to a.addEvent() in the result closure, example:
 
-```
+```groovy
 a.addEvent("RangeEvent", 
   ["value":params['range'],
      "pid":v.id

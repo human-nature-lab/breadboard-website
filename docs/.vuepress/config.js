@@ -65,12 +65,9 @@ module.exports = {
           path: '/v/2.4.0/deployment/',
           collapsable: false,
           children: [
-            'deployment/installing-an-ssl-certificate',
             'deployment/setting-up-a-server',
-            {
-              title: 'AMT',
-              path: 'deployment/amt/'
-            }
+            'deployment/installing-an-ssl-certificate',
+            'deployment/amt',
           ]
         },
         {
@@ -121,12 +118,9 @@ module.exports = {
           'path': '/deployment/',
           'collapsable': false,
           'children': [
-            '/deployment/installing-an-ssl-certificate',
             '/deployment/setting-up-a-server',
-            {
-              'title': 'AMT',
-              'path': '/deployment/amt/'
-            }
+            '/deployment/installing-an-ssl-certificate',
+            '/deployment/amt',
           ]
         },
         '/upgrade-guide',
