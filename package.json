@@ -31,6 +31,7 @@
     "typedoc-plugin-markdown": "^3.8.1",
     "typescript": "^4.2.4",
     "vuepress": "^1.8.2",
+    "vuepress-plugin-check-md": "0.0.2",
     "vuepress-plugin-zooming": "^1.1.8",
     "walkdir": "^0.4.1"
   }

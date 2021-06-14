@@ -69,7 +69,7 @@ This method will calculate the percentage of correct responses for this player
 | player | Vertex | | The player node to score |
 
 ##### Returns
-[`Score`](#Score)
+[`Score`](#score)
 #### onDone(Closure cb)
 Add a closure to run when the form is completed by a player
 #### start()
@@ -143,7 +143,7 @@ In addition to the base question parameters, this has the following parameters:
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | choices | List\<String \| Choice\> |  | Which choices to display for each question |
-| items | List\<[ScaleItem](#scalechoice))\> |  | The questions to ask |
+| items | List\<[ScaleItem](#scaleitem))\> |  | The questions to ask |
 
 ### HTML Question
 Show some content to a player. Does not require a response from the participant.

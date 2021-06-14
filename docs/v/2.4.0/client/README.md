@@ -27,7 +27,7 @@ This is the root component of all [Vuetify] apps. It is required to be at the ro
 ### ConnectionStatus
 The connection status component will display a message telling your participants that the connection with the server has stopped for some reason. This can be helpful when a user's internet is spotty or when there are actual server issues in the game.
 
-[API documentation](../api/frontend/client-components.md#connection-status)
+[API documentation](../api/frontend/client-components.md#connectionstatus)
 
 ### SVGGraph
 The SVG graph component renders an force-directed, egocentric graph in the browser. The default html includes some examples for how images can be used for the nodes instead of the default circles.
@@ -47,7 +47,7 @@ This component renders the HTML content assigned to the player using the [conten
 ### PlayerChoices
 This component renders all of the choices currently available to a player. Choices are assigned to a player when you use the [`a.add`](../api/scripting/README.md#actions) method.
 
-[API documentation](../api/frontent/client-components.md#playerchoices)
+[API documentation](../api/frontend/client-components.md#playerchoices)
 
 ### Form
 The form component will render any forms that are assigned to a player. If no forms are assigned, it doesn't do anything. See the [form module](../modules/form.md) for more details.

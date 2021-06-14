@@ -12,6 +12,8 @@ The rest of the site is just plain html, css and js files and can be edited dire
 
 First add a .env file with BREADBOARD_SOURCE and DOC_ROOT environment variables defined. Use the .env.example for more information. Make desired changes in the breadboard source code and then use `sh generate.sh` to update the generated parts of these docs.
 
+Use `npx vuepress check-md docs` to check for link issues in the documentation.
+
 
 ## Local email testing
 The breadboard.yale.edu website is currently hosted via the Netlify platform. It is a static website which uses Netlify functions to handle sending an email in response to a contact form.

@@ -4,7 +4,8 @@ module.exports = {
   base: '/docs/',
   dest: 'dist/docs',
   plugins: [
-    'vuepress-plugin-zooming'
+    'vuepress-plugin-zooming',
+    'check-md'
   ],
   themeConfig: {
     logo: '/images/logo_breadboard_162_x_40.png',
@@ -110,6 +111,7 @@ module.exports = {
           'collapsable': false,
           'children': [
             '/scripting/graph-algorithms',
+            '/scripting/language-reference/',
             '/scripting/recipes'
           ]
         },

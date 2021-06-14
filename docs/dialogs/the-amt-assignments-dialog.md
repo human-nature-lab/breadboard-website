@@ -5,7 +5,7 @@
 When breadboard is connected to your requestor AMT credentials you'll be able to view and make changes to all of the HITs and assignments the connected AMT account has created.
 
 ### Connecting your requestor account
-1. Create an [AMT requestor account](../deployment/amt.md#creating-an-amt-requester-account)
+1. Create an [AMT requestor account](../deployment/amt.md#creating-an-amt-requestor-account)
 2. Run breadboard with your access and secret keys by adding them to*breadboard.sh*
 	- Add `-DAMT_ACCESS_KEY={your access key}` and `-DAMT_SECRET_KEY={your secret key}` at the end of the *breadboard.sh* or *breadboard.bat* file
 

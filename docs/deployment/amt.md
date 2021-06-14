@@ -80,7 +80,7 @@ finishStep.run = {
 }
 ```
 
-For more information about the getSubmitForm method refer to the [Language Reference](../../scripting/language-reference.md#g-getsubmitform-player-bonus-reason-sandbox-comments).
+For more information about the `g.getSubmitForm` method refer to the [API Documentation](../scripting/language-reference.md#g-getsubmitform-vertex-player-string-bonus).
 
 
 #### Dealing with inactive players
