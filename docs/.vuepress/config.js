@@ -111,7 +111,7 @@ module.exports = {
           'collapsable': false,
           'children': [
             '/scripting/graph-algorithms',
-            '/scripting/language-reference/',
+            '/scripting/language-reference',
             '/scripting/recipes'
           ]
         },
