@@ -1,7 +1,20 @@
 ## Angular Client
-The original Breadboard 2 client used AngularJS to create the user interface and this older client can still be used if desired. Simply replace the client-graph and client-html content with the following content.
+The original Breadboard 2 client used AngularJS to create the user interface and this older client can still be used if desired.
 
-### Replace the client-graph content
+### Upgrade existing 2.3 experiment
+To use an existing 2.3 experiment add this code at the top of the client-graph.js file.
+
+```javascript
+async function init() {
+  const config = await Breadboard.loadConfig()
+  await Breadboard.loadAngularClient()
+}
+
+init()
+```
+
+### Use the old UI with a new experiment
+Simply replace the client-graph and client-html content with the content below.
 ```javascript
 async function init() {
   const config = await Breadboard.loadConfig()
