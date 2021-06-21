@@ -33,7 +33,16 @@ async function init () {
     Breadboard.addScriptFromURL('https://cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.20.0/vuedraggable.umd.min.js'),
   ])
   // Now everything is loaded so we initialize the client 
-  await Breadboard.createDefaultVue(config.clientHtml)
+  await Breadboard.createDefaultVue(config.clientHtml, {
+    components: {
+      draggable: window.vuedraggable
+    },
+    data () {
+      return {
+        drag: false
+      }
+    }
+  })
 }
 init()
 ```
