@@ -18,6 +18,26 @@ async function init () {
 init()
 ```
 
+### Loading external libraries
+It's common to load external libraries in Breadboard. For example, to load [Vue.Draggable](https://sortablejs.github.io/Vue.Draggable/) into Breadboard to enable drag-and-drop interactions you could use the following code:
+
+```javascript
+async function init () {
+  const config = await Breadboard.loadConfig()
+  await Promise.all([
+    // First load Vue and default dependencies
+    Breadboard.loadVueDependencies(),
+    // Next load sortablejs which is a dependency of Vue.Draggable
+    Breadboard.addScriptFromURL('https://cdn.jsdelivr.net/npm/sortablejs@1.8.4/Sortable.min.js'),
+    // Finally load Vue.Draggable
+    Breadboard.addScriptFromURL('https://cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.20.0/vuedraggable.umd.min.js'),
+  ])
+  // Now everything is loaded so we initialize the client 
+  await Breadboard.createDefaultVue(config.clientHtml)
+}
+init()
+```
+
 ## Default client 
 The default client template (found in `conf/defaults/client-html.html`) includes several components that can be customized to created a user interface for your Breadboard game. Many of these components are customized using [slots](https://vuejs.org/v2/guide/components-slots.html).
 
