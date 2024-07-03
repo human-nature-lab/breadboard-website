@@ -1,10 +1,7 @@
 ---
 ---
 
-::: tip Note
-### breadboard v2.3.0 is out!
- Go to the [upgrade guide](upgrade-guide) for more information.
-:::
+## Breadboard v2.3.2
 
 In fields as diverse as computational sociology, behavioral economics, and social psychology, researchers conduct experiments where they place participants in networks of their own design, with rules of interactions of their own devising, in order to play repeated games where participants' actions affect others they are connected with.
 

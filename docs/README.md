@@ -1,7 +1,7 @@
 ---
 ---
 
-::: tip Warning
+::: tip Note
   ### breadboard v2.4.0 is released!
   Go to the [upgrade guide](upgrade-guide) for more information.
 :::

@@ -23,15 +23,15 @@ module.exports = {
       }
     ],
     sidebar: {
-      '/v/2.4.0/': [
+      '/': [
         {
           title: 'Home',
-          path: '/v/2.4.0/'
+          path: '/'
         },
         'getting-started',
         {
           title: 'Dialogs',
-          path: '/v/2.4.0/dialogs/',
+          path: '/dialogs/',
           collapsable: false,
           children: [
             'dialogs/the-script-dialog.md',
@@ -43,7 +43,7 @@ module.exports = {
         },
         {
           title: 'Scripting',
-          path: '/v/2.4.0/scripting/',
+          path: '/scripting/',
           collapsable: false,
           children: [
             'scripting/graph-algorithms',
@@ -53,7 +53,7 @@ module.exports = {
         },
         {
           title: 'Modules',
-          path: '/v/2.4.0/modules/',
+          path: '/modules/',
           collapsable: false,
           children: [
             'modules/form',
@@ -63,7 +63,7 @@ module.exports = {
         },
         {
           title: 'Deployment',
-          path: '/v/2.4.0/deployment/',
+          path: '/deployment/',
           collapsable: false,
           children: [
             'deployment/setting-up-a-server',
@@ -73,7 +73,7 @@ module.exports = {
         },
         {
           title: 'API',
-          path: '/v/2.4.0/api/',
+          path: '/api/',
           collapsable: false,
           children: [
             'api/scripting/',
@@ -87,15 +87,15 @@ module.exports = {
         'release-history',
         'license'
       ],
-      '/': [
+      '/v/2.3.2': [
         {
           'title': 'Home',
-          'path': '/'
+          'path': '/v/2.3.2/'
         },
-        '/getting-started',
+        'getting-started',
         {
           'title': 'Dialogs',
-          'path': '/dialogs/',
+          'path': '/v/2.3.2/dialogs/',
           'collapsable': false,
           'children': [
             '/dialogs/the-script-dialog.md',
@@ -107,22 +107,22 @@ module.exports = {
         },
         {
           'title': 'Scripting',
-          'path': '/scripting/',
+          'path': '/v/2.3.2/scripting/',
           'collapsable': false,
           'children': [
-            '/scripting/graph-algorithms',
-            '/scripting/language-reference',
-            '/scripting/recipes'
+            'scripting/graph-algorithms',
+            'scripting/language-reference',
+            'scripting/recipes'
           ]
         },
         {
           'title': 'Deployment',
-          'path': '/deployment/',
+          'path': '/v/2.3.2/deployment/',
           'collapsable': false,
           'children': [
-            '/deployment/setting-up-a-server',
-            '/deployment/installing-an-ssl-certificate',
-            '/deployment/amt',
+            'deployment/setting-up-a-server',
+            'deployment/installing-an-ssl-certificate',
+            'deployment/amt',
           ]
         },
         '/upgrade-guide',
