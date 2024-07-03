@@ -70,7 +70,8 @@ $(function () {
                 );
                 // var platform_code = platform_map[platform_flag];
                 // ga('send', 'event', 'Downloads', 'Accept Terms', platform_code);
-                window.location = 'https://github.com/human-nature-lab/breadboard/releases/download/v2.3.1/breadboard-v2.3.1.zip'
+                window.open('https://github.com/human-nature-lab/breadboard/releases/tag/v2.4.0')
+                // window.location = 'https://github.com/human-nature-lab/breadboard/releases/download/v2.3.1/breadboard-v2.3.1.zip'
                 modal_close($modal);
                 $email.val('');
             } else {

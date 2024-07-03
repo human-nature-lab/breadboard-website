@@ -6,4 +6,5 @@ development to data collection.
 - [Parameters Dialog](./the-parameters-dialog.md)
 - [Steps Dialog](./the-steps-dialog.md)
 - [Content Dialog](./the-content-dialog.md)
+- [Players Dialog](./players-dialog.md)
 - [AMT Dialog](./the-amt-assignments-dialog.md)

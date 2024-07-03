@@ -14,11 +14,11 @@ module.exports = {
       {
         text: 'Version',
         items: [{
-          text: '2.4.0 (next)',
-          link: '/v/2.4.0/'
-        }, {
-          text: '2.3.1 (current)',
+          text: '2.4.0 (current)',
           link: '/'
+        }, {
+          text: '2.3.2',
+          link: '/v/2.3.2/'
         }]
       }
     ],

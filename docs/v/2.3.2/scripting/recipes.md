@@ -182,11 +182,9 @@ for (var i = 0; i < (nodes.length - 1); i++) {
 
 
 ### Surveys in breadboard
-See the [Form](../modules/form.md) for the easiest way to conduct simple surveys. More complex surveys can be created using the methods below.
-
 You may want to conduct a survey or, in the course of a game, have your participant enter input beyond pushing buttons. This is supported through a `custom` parameter of the player action object.
 
-You can put any HTML form elements in the custom parameter of the player action. Make sure to add the class `param` to the input so the value will be accessible from the breadboard result closure. In addition, add a `ng-model` attribute and set the input as `required` if you want the survey question to be required.
+You can put any HTML form elements in the custom parameter of the player action. Make sure to add the class `param` to the input so the value will be acessible from the breadboard result closure. In addition, add a `ng-model` attribute and set the input as `required` if you want the survey question to be required.
 
 ###### Recipe
 ```groovy
@@ -243,7 +241,7 @@ g.V.each { v->
 
 Custom inputs don't support recording data using an event property on the choice so you’ll have to add a call to a.addEvent() in the result closure, example:
 
-```
+```groovy
 a.addEvent("RangeEvent", 
   ["value":params['range'],
      "pid":v.id

@@ -5,8 +5,9 @@
   "description": "",
   "main": "send-email.js",
   "scripts": {
-    "start": "vuepress dev docs",
-    "build": "sh build.sh",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider vuepress dev docs",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider sh build.sh",
+    "serve:dist": "npx serve ./dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -19,6 +20,7 @@
   "author": "Netlify",
   "license": "MIT",
   "dependencies": {
+    "cross-env": "^7.0.3",
     "mailgun-js": "^0.22.0"
   },
   "devDependencies": {

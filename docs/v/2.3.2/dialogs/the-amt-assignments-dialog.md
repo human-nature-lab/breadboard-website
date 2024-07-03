@@ -27,6 +27,16 @@ Breadboard has the option to prevent players from playing a single experiment mu
 #### HIT Lifetime
 The HIT lifetime determines how long the the HIT will be available for workers to accept it. Generally, the majority of workers tend to reserve and join the game within the first few minutes of the HIT being available. After a few minutes the rate of players joining generally goes to zero.
 
+### Creating Payment HITs
+These are one-time HITs usually used to resolve some payment conflict with a worker. A Payment HIT is created via the *Create Payment HITs* tab and can be applied to multiple workers at the same time.
+1. Enter each worker ID on separate lines in the *Worker IDs* textbox
+2. Enter a reason for creating the Payment HIT
+3. Enter a reward for the HIT in dollars
+4. Click *Create Payment HITs*
+
+One HIT will be created for each *Worker ID* that was placed in the *Worker IDs* textbox
+
+
 After you have run an experiment using AMT workers open the AMT Assignments dialog. You will see a list of experiment instances, if the experiment instance has an associated HIT there will be a "Get Assignments" button. Press the button to view the currently submitted assignments. **Note: It may take a few minutes for your players to submit their assignments, particularly if you have provided them with a survey or comment box at the end of the game.**
 
 The displayed Assignments table will provide the following information:
@@ -37,18 +47,8 @@ The displayed Assignments table will provide the following information:
 | Worker ID                      | This is a unique ID that identifies the worker. This ID can be used to link workers who participated in multiple experiment instances. |
 | Accept Time                    | The date and time when the worker accepted the assignment. |
 | Submit Time                    | The date and time when the worker submitted the assignment. |
-| Bonus                          | Click the "Grant Bonus" button to automatically grant the specified bonus to the worker. The amount is what you provided as the `reward` parameter to the [g.getSubmitForm](../api/scripting/#g-getsubmitform-vertex-player-string-bonus) method. |
+| Bonus                          | Click the "Grant Bonus" button to automatically grant the specified bonus to the worker. The amount is what you provided as the ```reward``` parameter to the [g.getSubmitForm](../scripting/language-reference.md#g-getsubmitform-player-bonus-reason-sandbox-comments) method. |
 | Reason                         | This text label identifies how the worker completed the game. You can provide this as the ```reason``` parameter of the g.getSubmitForm method. |
 | Status                         | Click the "Approve" button to pay the worker the assignment reward. Click the "Reject" button if the worker did not adequately complete the task. |
 | Block Worker                   | A blocked worker will no longer be able to participate in ANY of your tasks. **Warning: Workers' reputations are negatively affected by being blocked. Use the Assignment Completed button and Disallow Previous Players to prevent repeat play.** |
 | Assignment Completed?          | If you want to prevent this worker from repeating this task, click the "Mark Completed" button and then use the ```Only this game type``` or ```Any``` setting for the "Disallow Previous Players" setting for future experiments. |
-
-
-### Creating Payment HITs
-These are one-time HITs usually used to resolve some payment conflict with a worker. A Payment HIT is created via the *Create Payment HITs* tab and can be applied to multiple workers at the same time.
-1. Enter each worker ID on separate lines in the *Worker IDs* textbox
-2. Enter a reason for creating the Payment HIT
-3. Enter a reward for the HIT in dollars
-4. Click *Create Payment HITs*
-
-One HIT will be created for each *Worker ID* that was placed in the *Worker IDs* textbox

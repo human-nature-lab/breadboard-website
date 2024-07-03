@@ -11,7 +11,7 @@ You can use breadboard to develop human interaction experiments (e.g. public goo
 
 #### Is breadboard free?
 
-Breadboard can be licensed free of charge for academic and non-profit use. If you are doing research for a for-profit entity and want to use breadboard, please fill out the [contact form](../#contact) for more information.
+Breadboard can be licensed free of charge for academic and non-profit use. If you are doing research for a for-profit entity and want to use breadboard, please fill out the [contact form](http://breadboard.yale.edu/#contact) for more information.
 
 ### Technical 
 
