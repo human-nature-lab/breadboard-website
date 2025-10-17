@@ -2,6 +2,38 @@ const validateEnv = require('./services/validate-env')
 const sendEmail = require('./services/send-email')
 const { validateEmail, validateLength } = require('./services/validations')
 
+function logEvent(event) {
+  // Minimal, safe request logging
+  const headers = event.headers || {}
+  const ip =
+    headers['x-nf-client-connection-ip'] ||
+    headers['client-ip'] ||
+    (headers['x-forwarded-for'] ? headers['x-forwarded-for'].split(',')[0].trim() : undefined) ||
+    headers['x-real-ip'] ||
+    'unknown'
+
+  console.log(
+    JSON.stringify(
+      {
+        msg: 'contact form request',
+        method: event.httpMethod,
+        path: event.path,
+        ip,
+        userAgent: headers['user-agent'],
+        referer: headers['referer'] || headers['referrer'],
+        // Avoid logging the entire body; include only non-sensitive fields if needed
+        bodyPreview: {
+          name: body?.name,
+          email: body?.email,
+          phone: body?.phone ? '[redacted]' : undefined
+        }
+      },
+      null,
+      0
+    )
+  )
+}
+
 exports.handler = async (event) => {
   const envResult = validateEnv('FROM_EMAIL_ADDRESS', 'CONTACT_EMAILS', 'URL')
   if (envResult !== true) {
@@ -9,11 +41,16 @@ exports.handler = async (event) => {
   }
   const { FROM_EMAIL_ADDRESS, CONTACT_EMAILS, URL } = process.env
   const body = JSON.parse(event.body)
+  try {
+    logEvent(event)
+  } catch (e) {
+    console.error('Error logging event:', e)
+  }
 
   try {
     validateLength('Name', body.name, 3, 50)
     validateEmail('Email', body.email)
-    validateLength('Message', body.message, 3, 1000)
+    validateLength('Message', body.message, 20, 1000)
     validateLength('Phone', body.phone, 3, 10)
   } catch (e) {
     return {
