@@ -2,7 +2,7 @@ const validateEnv = require('./services/validate-env')
 const sendEmail = require('./services/send-email')
 const { validateEmail, validateLength } = require('./services/validations')
 
-function logEvent(event) {
+function logEvent(event, body) {
   // Minimal, safe request logging
   const headers = event.headers || {}
   const ip =
@@ -42,7 +42,7 @@ exports.handler = async (event) => {
   const { FROM_EMAIL_ADDRESS, CONTACT_EMAILS, URL } = process.env
   const body = JSON.parse(event.body)
   try {
-    logEvent(event)
+    logEvent(event, body)
   } catch (e) {
     console.error('Error logging event:', e)
   }
