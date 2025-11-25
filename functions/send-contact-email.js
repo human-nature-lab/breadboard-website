@@ -3,15 +3,19 @@ const sendEmail = require('./services/send-email')
 const { validateEmail, validateLength } = require('./services/validations')
 const { blocklist } = require('./services/blocklist')
 
-function logEvent(event, body) {
-  // Minimal, safe request logging
+function getIP(event) {
   const headers = event.headers || {}
-  const ip =
-    headers['x-nf-client-connection-ip'] ||
+  return headers['x-nf-client-connection-ip'] ||
     headers['client-ip'] ||
     (headers['x-forwarded-for'] ? headers['x-forwarded-for'].split(',')[0].trim() : undefined) ||
     headers['x-real-ip'] ||
     'unknown'
+}
+
+function logEvent(event, body) {
+  // Minimal, safe request logging
+  const headers = event.headers || {}
+  const ip = getIP(event)
 
   console.log(
     JSON.stringify(
@@ -53,6 +57,7 @@ exports.handler = async (event) => {
     validateEmail('Email', body.email)
     validateLength('Message', body.message, 20, 1000)
     validateLength('Phone', body.phone, 3, 10)
+    const ip = getIP(event)
     if (blocklist.isBlocked(ip)) {
       console.log(JSON.stringify({
         msg: 'IP blocked',
