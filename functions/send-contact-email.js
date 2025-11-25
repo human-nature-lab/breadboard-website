@@ -1,6 +1,7 @@
 const validateEnv = require('./services/validate-env')
 const sendEmail = require('./services/send-email')
 const { validateEmail, validateLength } = require('./services/validations')
+const { blocklist } = require('./services/blocklist')
 
 function logEvent(event, body) {
   // Minimal, safe request logging
@@ -52,7 +53,7 @@ exports.handler = async (event) => {
     validateEmail('Email', body.email)
     validateLength('Message', body.message, 20, 1000)
     validateLength('Phone', body.phone, 3, 10)
-    if (blocker.isBlocked(ip)) {
+    if (blocklist.isBlocked(ip)) {
       console.log(JSON.stringify({
         msg: 'IP blocked',
         ip,

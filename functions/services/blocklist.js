@@ -120,7 +120,9 @@ const vdsinaCIDRs = [
   '212.118.56.0/24',
 ];
 
-export const blocker = new IPBlocker()
+const blocklist = new IPBlocker()
 
-blocker.addCIDR(...vdsinaCIDRs)
-blocker.addCIDR(...otherRanges)
+blocklist.addCIDR(...vdsinaCIDRs)
+blocklist.addCIDR(...otherRanges)
+
+module.exports = { blocklist }
