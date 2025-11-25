@@ -52,6 +52,21 @@ exports.handler = async (event) => {
     validateEmail('Email', body.email)
     validateLength('Message', body.message, 20, 1000)
     validateLength('Phone', body.phone, 3, 10)
+    if (blocker.isBlocked(ip)) {
+      console.log(JSON.stringify({
+        msg: 'IP blocked',
+        ip,
+        bodyPreview: {
+          name: body?.name,
+          email: body?.email,
+          phone: body?.phone ? '[redacted]' : undefined
+        }
+      }))
+      return {
+        statusCode: 403,
+        body: 'Invalid request'
+      }
+    }
   } catch (e) {
     return {
       statusCode: 403,
